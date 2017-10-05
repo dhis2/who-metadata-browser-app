@@ -1,0 +1,5 @@
+{
+    "whoDataJson": "data/whoData.json",
+    "useLocale": false,
+    "aboutWHOreferences": "write something about WHO reference indicators"
+}

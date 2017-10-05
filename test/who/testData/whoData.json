@@ -1,0 +1,2136 @@
+{
+  "attributes": [
+    {
+      "categoryOptionAttribute": false, 
+      "categoryOptionGroupAttribute": false, 
+      "code": "AX", 
+      "constantAttribute": false, 
+      "created": "2016-09-12T12:29:37.717+0000", 
+      "dataElementAttribute": false, 
+      "dataElementGroupAttribute": false, 
+      "dataSetAttribute": false, 
+      "documentAttribute": false, 
+      "externalAccess": false, 
+      "id": "R4PoMFmGvFO", 
+      "indicatorAttribute": true, 
+      "indicatorGroupAttribute": false, 
+      "lastUpdated": "2016-09-12T12:29:37.717+0000", 
+      "legendSetAttribute": false, 
+      "mandatory": false, 
+      "name": "Attribute example", 
+      "optionAttribute": false, 
+      "optionSetAttribute": false, 
+      "organisationUnitAttribute": false, 
+      "organisationUnitGroupAttribute": false, 
+      "organisationUnitGroupSetAttribute": false, 
+      "programAttribute": false, 
+      "programIndicatorAttribute": false, 
+      "programStageAttribute": false, 
+      "sqlViewAttribute": false, 
+      "trackedEntityAttribute": false, 
+      "trackedEntityAttributeAttribute": false, 
+      "unique": false, 
+      "userAttribute": false, 
+      "userGroupAttribute": false, 
+      "valueType": "TEXT"
+    }
+  ], 
+  "created": "2016-09-12T12:31:21.676+0000", 
+  "indicatorGroups": [
+    {
+      "created": "2015-05-25T01:53:52.064+0000", 
+      "externalAccess": false, 
+      "id": "udCrMpFlegu", 
+      "indicators": [
+        {
+          "created": "2015-05-25T03:46:02.262+0000", 
+          "externalAccess": false, 
+          "id": "bD67D0kVEJQ", 
+          "lastUpdated": "2016-08-24T12:56:32.538+0000", 
+          "name": "HIV test positivity rate (%)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "access": "r-------", 
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }, 
+            {
+              "access": "rw------", 
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-10-20T05:49:36.024+0000", 
+          "externalAccess": false, 
+          "id": "gIyVFY53zkn", 
+          "lastUpdated": "2016-08-24T12:56:32.549+0000", 
+          "name": "ART retention rate after 12 months 15-19 years (%)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "access": "r-------", 
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }, 
+            {
+              "access": "rw------", 
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-05-25T13:19:49.679+0000", 
+          "externalAccess": false, 
+          "id": "wbmZBqKvdvb", 
+          "lastUpdated": "2016-08-24T13:23:26.198+0000", 
+          "name": "HIV test positivity rate - Other (%)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }, 
+            {
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-05-25T01:56:41.501+0000", 
+          "externalAccess": false, 
+          "id": "SHX18dGdvqe", 
+          "lastUpdated": "2016-08-24T13:23:54.861+0000", 
+          "name": "HIV testing rate (% of estimated)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }, 
+            {
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-10-20T05:56:13.094+0000", 
+          "externalAccess": false, 
+          "id": "ux16uCIgdhT", 
+          "lastUpdated": "2016-08-24T12:56:32.767+0000", 
+          "name": "PLHIV that are virologically suppressed 15-19 years (%)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "access": "rw------", 
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }, 
+            {
+              "access": "r-------", 
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-10-20T05:40:28.313+0000", 
+          "externalAccess": false, 
+          "id": "p1kwDk2xUj8", 
+          "lastUpdated": "2016-08-24T13:27:04.011+0000", 
+          "name": "PLHIV that are virologically suppressed - TB (%)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }, 
+            {
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-10-20T05:48:39.478+0000", 
+          "externalAccess": false, 
+          "id": "QogxWKs3hlc", 
+          "lastUpdated": "2016-08-24T12:56:32.779+0000", 
+          "name": "ART retention rate after 12 months < 5 years (%)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "access": "r-------", 
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }, 
+            {
+              "access": "rw------", 
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-05-25T13:18:47.769+0000", 
+          "externalAccess": false, 
+          "id": "qFRFe2W8dxE", 
+          "lastUpdated": "2016-08-24T12:59:24.484+0000", 
+          "name": "HIV test positivity rate - PMTCT(%)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "access": "r-------", 
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }, 
+            {
+              "access": "rw------", 
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-05-25T13:22:55.089+0000", 
+          "externalAccess": false, 
+          "id": "ceabwLf2RFK", 
+          "lastUpdated": "2016-08-24T13:27:53.175+0000", 
+          "name": "HIV new treatment rate - TB (%)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }, 
+            {
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-10-20T05:52:24.179+0000", 
+          "externalAccess": false, 
+          "id": "onTVCvHmjMI", 
+          "lastUpdated": "2016-08-24T12:56:32.745+0000", 
+          "name": "HIV new treatment rate < 5 years (%)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "access": "rw------", 
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }, 
+            {
+              "access": "r-------", 
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-10-20T05:54:19.548+0000", 
+          "externalAccess": false, 
+          "id": "TQv3lcKHi69", 
+          "lastUpdated": "2016-08-24T12:56:32.756+0000", 
+          "name": "HIV test positivity rate < 5 years (%)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "access": "rw------", 
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }, 
+            {
+              "access": "r-------", 
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-10-22T08:48:40.260+0000", 
+          "externalAccess": false, 
+          "id": "ggDwovpCuk6", 
+          "lastUpdated": "2016-08-24T12:56:32.906+0000", 
+          "name": "ART retention forecast 15-19 years", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "access": "r-------", 
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }, 
+            {
+              "access": "rw------", 
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-10-19T12:13:49.289+0000", 
+          "externalAccess": false, 
+          "id": "zqzX3zcosD5", 
+          "lastUpdated": "2016-08-24T12:56:32.562+0000", 
+          "name": "PLHIV that are virologically suppressed (%)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "access": "rw------", 
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }, 
+            {
+              "access": "r-------", 
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-10-20T05:55:14.424+0000", 
+          "externalAccess": false, 
+          "id": "xzc69CUxXbN", 
+          "lastUpdated": "2016-08-24T12:56:32.722+0000", 
+          "name": "HIV test positivity rate 15-19 years (%)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "access": "rw------", 
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }, 
+            {
+              "access": "r-------", 
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-10-19T11:53:39.762+0000", 
+          "externalAccess": false, 
+          "id": "JUvYLsNo43H", 
+          "lastUpdated": "2016-08-24T12:56:32.663+0000", 
+          "name": "ART retention rate after 12 months (%)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "access": "r-------", 
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }, 
+            {
+              "access": "rw------", 
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-10-20T05:53:27.748+0000", 
+          "externalAccess": false, 
+          "id": "NOTVoniJjCb", 
+          "lastUpdated": "2016-08-24T12:56:32.711+0000", 
+          "name": "HIV new treatment rate 15-19 years (%)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "access": "rw------", 
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }, 
+            {
+              "access": "r-------", 
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-05-25T03:43:45.131+0000", 
+          "externalAccess": false, 
+          "id": "HY6UcPnbTLI", 
+          "lastUpdated": "2016-08-24T12:56:32.652+0000", 
+          "name": "HIV new treatment rate (%)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "access": "rw------", 
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }, 
+            {
+              "access": "r-------", 
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-05-25T13:24:42.364+0000", 
+          "externalAccess": false, 
+          "id": "DM3seDcddds", 
+          "lastUpdated": "2016-08-24T13:24:49.648+0000", 
+          "name": "HIV new treatment rate - Other (%)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }, 
+            {
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-05-25T01:55:33.041+0000", 
+          "externalAccess": false, 
+          "id": "VL9YRn18ZIv", 
+          "lastUpdated": "2016-08-24T12:56:32.598+0000", 
+          "name": "HIV prevalence estimated (%)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "access": "rw------", 
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }, 
+            {
+              "access": "r-------", 
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-05-25T13:18:10.257+0000", 
+          "externalAccess": false, 
+          "id": "Ale7EKhs0lk", 
+          "lastUpdated": "2016-08-24T13:26:22.299+0000", 
+          "name": "HIV test positivity rate - TB (%)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }, 
+            {
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-05-25T13:24:08.865+0000", 
+          "externalAccess": false, 
+          "id": "yyYFmFAfW7N", 
+          "lastUpdated": "2016-08-24T12:58:09.572+0000", 
+          "name": "HIV new treatment rate - PMTCT (%)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "access": "r-------", 
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }, 
+            {
+              "access": "rw------", 
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-10-29T08:22:56.705+0000", 
+          "externalAccess": false, 
+          "id": "aaiMfJpzDFW", 
+          "lastUpdated": "2016-08-24T12:56:32.884+0000", 
+          "name": "PLHIV in care on ART (%)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "access": "r-------", 
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }, 
+            {
+              "access": "rw------", 
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-12-04T06:47:17.840+0000", 
+          "externalAccess": false, 
+          "id": "aSxyjtSGaIe", 
+          "lastUpdated": "2016-08-24T12:56:32.801+0000", 
+          "name": "New on ART of new in care (%)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "access": "r-------", 
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }, 
+            {
+              "access": "rw------", 
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-10-20T05:39:32.515+0000", 
+          "externalAccess": false, 
+          "id": "L3HjhNcCQCt", 
+          "lastUpdated": "2016-08-24T13:25:40.752+0000", 
+          "name": "PLHIV that are virologically suppressed - Other (%)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }, 
+            {
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-10-22T08:49:05.422+0000", 
+          "externalAccess": false, 
+          "id": "mnFxSgobDTw", 
+          "lastUpdated": "2016-08-24T12:56:32.917+0000", 
+          "name": "ART retention forecast < 5 years", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "access": "rw------", 
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }, 
+            {
+              "access": "r-------", 
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }
+          ]
+        }, 
+        {
+          "attributeValues": [
+            {
+              "attribute": {
+                "code": "AX", 
+                "created": "2016-09-12T12:29:37.717+0000", 
+                "externalAccess": false, 
+                "id": "R4PoMFmGvFO", 
+                "lastUpdated": "2016-09-12T12:29:37.717+0000", 
+                "name": "Attribute example"
+              }, 
+              "created": "2016-09-12T12:30:02.117+0000", 
+              "lastUpdated": "2016-09-12T12:30:02.117+0000", 
+              "value": "Attribute value for ART.3"
+            }
+          ], 
+          "code": "ART.3", 
+          "created": "2015-10-27T13:45:32.509+0000", 
+          "externalAccess": false, 
+          "id": "ky95P9g5GtI", 
+          "lastUpdated": "2016-09-12T12:30:02.157+0000", 
+          "name": "ART coverage (%)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }, 
+            {
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-10-22T08:41:17.280+0000", 
+          "externalAccess": false, 
+          "id": "zyLrEXF2Eja", 
+          "lastUpdated": "2016-08-24T12:56:32.895+0000", 
+          "name": "ART retention forecast", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "access": "r-------", 
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }, 
+            {
+              "access": "rw------", 
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }
+          ]
+        }, 
+        {
+          "created": "2015-10-27T13:44:20.370+0000", 
+          "externalAccess": false, 
+          "id": "gmvB06PTbdm", 
+          "lastUpdated": "2016-08-24T12:56:32.790+0000", 
+          "name": "HIV care coverage (%)", 
+          "publicAccess": "--------", 
+          "user": {
+            "created": "2016-08-24T09:09:24.757+0000", 
+            "externalAccess": false, 
+            "id": "nMMuaCz8IZE", 
+            "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+            "name": "Olav Poppe"
+          }, 
+          "userGroupAccesses": [
+            {
+              "access": "rw------", 
+              "displayName": "Metadata administrator", 
+              "id": "DSmKT2IO54W", 
+              "userGroupUid": "DSmKT2IO54W"
+            }, 
+            {
+              "access": "r-------", 
+              "displayName": "HIV", 
+              "id": "p6J0XPSyxgB", 
+              "userGroupUid": "p6J0XPSyxgB"
+            }
+          ]
+        }
+      ], 
+      "lastUpdated": "2016-08-24T12:56:32.951+0000", 
+      "name": "HIV", 
+      "publicAccess": "--------", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "access": "rw------", 
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }, 
+        {
+          "access": "r-------", 
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }
+      ]
+    }
+  ], 
+  "indicatorTypes": [
+    {
+      "created": "2015-03-22T23:41:28.852+0000", 
+      "externalAccess": false, 
+      "factor": 100, 
+      "id": "hmSnCXmLYwt", 
+      "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+      "name": "Percentage", 
+      "number": false
+    }, 
+    {
+      "created": "2015-03-22T23:41:41.340+0000", 
+      "externalAccess": false, 
+      "factor": 1000, 
+      "id": "zpa0vUC7IWd", 
+      "lastUpdated": "2016-08-24T12:56:32.417+0000", 
+      "name": "Per 1000", 
+      "number": false
+    }, 
+    {
+      "created": "2015-03-22T23:41:52.207+0000", 
+      "externalAccess": false, 
+      "factor": 100000, 
+      "id": "BY11PjGMCg2", 
+      "lastUpdated": "2016-08-24T12:56:32.436+0000", 
+      "name": "Per 100 000", 
+      "number": false
+    }, 
+    {
+      "created": "2015-03-22T23:42:16.649+0000", 
+      "externalAccess": false, 
+      "factor": 1, 
+      "id": "k4RGC3sMTzO", 
+      "lastUpdated": "2016-08-24T12:56:32.458+0000", 
+      "name": "Rate (factor=1)", 
+      "number": false
+    }, 
+    {
+      "created": "2015-03-22T23:42:43.716+0000", 
+      "externalAccess": false, 
+      "factor": 1, 
+      "id": "kHy61PbChXr", 
+      "lastUpdated": "2016-08-24T12:56:32.478+0000", 
+      "name": "Numerator only", 
+      "number": true
+    }, 
+    {
+      "created": "2014-10-16T06:38:27.397+0000", 
+      "externalAccess": false, 
+      "factor": 10000, 
+      "id": "FWTvArgP0jt", 
+      "lastUpdated": "2016-08-24T12:56:32.498+0000", 
+      "name": "Per 10 000", 
+      "number": false
+    }
+  ], 
+  "indicators": [
+    {
+      "annualized": true, 
+      "attributeValues": [
+        {
+          "attribute": {
+            "code": "AX", 
+            "created": "2016-09-12T12:29:37.717+0000", 
+            "externalAccess": false, 
+            "id": "R4PoMFmGvFO", 
+            "lastUpdated": "2016-09-12T12:29:37.717+0000", 
+            "name": "Attribute example"
+          }, 
+          "created": "2016-09-12T12:30:02.117+0000", 
+          "lastUpdated": "2016-09-12T12:30:02.117+0000", 
+          "value": "Attribute value for ART.3"
+        }
+      ], 
+      "code": "ART.3", 
+      "created": "2015-10-27T13:45:32.509+0000", 
+      "decimals": 1, 
+      "denominator": "#{ORYyhLEyzrA}", 
+      "denominatorDescription": "HIV+ estimate (Total)", 
+      "externalAccess": false, 
+      "id": "ky95P9g5GtI", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-09-12T12:30:02.157+0000", 
+      "name": "ART coverage (%)", 
+      "numerator": "#{mqIVTKwfWl7}", 
+      "numeratorDescription": "PLHIV currently on ART", 
+      "publicAccess": "--------", 
+      "shortName": "ART coverage (%)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }, 
+        {
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-05-25T03:43:45.131+0000", 
+      "denominator": "#{O6wdXKIZ5L2}", 
+      "denominatorDescription": "HIV test positive", 
+      "description": "Proportion of all HIV clients with positive test results newly put on ART", 
+      "externalAccess": false, 
+      "id": "HY6UcPnbTLI", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-08-24T12:56:32.652+0000", 
+      "name": "HIV new treatment rate (%)", 
+      "numerator": "#{bJty1TJXcPN}", 
+      "numeratorDescription": "New on ART", 
+      "publicAccess": "--------", 
+      "shortName": "HIV new treatment rate (%)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "access": "rw------", 
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }, 
+        {
+          "access": "r-------", 
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-05-25T13:18:47.769+0000", 
+      "denominator": "#{MQ7gmDmlD8p.DkXxskAdwfa}", 
+      "denominatorDescription": "PMTCT pregnant women tested", 
+      "externalAccess": false, 
+      "id": "qFRFe2W8dxE", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-08-24T12:59:24.484+0000", 
+      "name": "HIV test positivity rate - PMTCT(%)", 
+      "numerator": "#{UB52CkoGgjI.DkXxskAdwfa}", 
+      "numeratorDescription": "PMTCT pregnant women tested positive", 
+      "publicAccess": "--------", 
+      "shortName": "HIV test positivity rate - PMTCT (%)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "access": "r-------", 
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }, 
+        {
+          "access": "rw------", 
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-05-25T13:19:49.679+0000", 
+      "denominator": "#{sX7pWYXIVIi.iuJjezRfU7l} + #{sX7pWYXIVIi.tX7GCVNiOLA}", 
+      "denominatorDescription": "HIV tests done (Other)", 
+      "description": "% HIV tests positive outside PMTCT and TB programmes.", 
+      "externalAccess": false, 
+      "id": "wbmZBqKvdvb", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-08-24T13:23:26.198+0000", 
+      "name": "HIV test positivity rate - Other (%)", 
+      "numerator": "#{O6wdXKIZ5L2.iuJjezRfU7l}+#{O6wdXKIZ5L2.tX7GCVNiOLA}", 
+      "numeratorDescription": "HIV tests positive (Other)", 
+      "publicAccess": "--------", 
+      "shortName": "HIV test positivity rate - Other (%)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }, 
+        {
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }
+      ]
+    }, 
+    {
+      "annualized": true, 
+      "created": "2015-05-25T01:56:41.501+0000", 
+      "denominator": "#{ORYyhLEyzrA}", 
+      "denominatorDescription": "HIV estimated", 
+      "description": "The proportion of the estimated HIV +'ve population who has been tested in the period.\r\nNB This includes people who have been tested more than once", 
+      "externalAccess": false, 
+      "id": "SHX18dGdvqe", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-08-24T13:23:54.861+0000", 
+      "name": "HIV testing rate (% of estimated)", 
+      "numerator": "#{sX7pWYXIVIi}", 
+      "numeratorDescription": "HIV tests performed", 
+      "publicAccess": "--------", 
+      "shortName": "HIV testing rate (% estimated)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }, 
+        {
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-05-25T13:24:42.364+0000", 
+      "denominator": "#{O6wdXKIZ5L2.iuJjezRfU7l} + #{O6wdXKIZ5L2.tX7GCVNiOLA}", 
+      "denominatorDescription": "HIV tests positive (Other)", 
+      "description": "Proportion of HIV +'ve patients who are  NOT part of PMTCT or TB programs newly put on treatment", 
+      "externalAccess": false, 
+      "id": "DM3seDcddds", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-08-24T13:24:49.648+0000", 
+      "name": "HIV new treatment rate - Other (%)", 
+      "numerator": "#{bJty1TJXcPN.iuJjezRfU7l}+#{bJty1TJXcPN.tX7GCVNiOLA}", 
+      "numeratorDescription": "HIV new on treatment (Other)", 
+      "publicAccess": "--------", 
+      "shortName": "HIV new treatment rate - Other (%)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }, 
+        {
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-05-25T13:18:10.257+0000", 
+      "denominator": "#{sX7pWYXIVIi.m4l9kAWQ9MR} + #{sX7pWYXIVIi.HEyTsQbutqu}", 
+      "denominatorDescription": "HIV tests performed on TB patients", 
+      "description": "% TB patients tested for HIV and found to be positive", 
+      "externalAccess": false, 
+      "id": "Ale7EKhs0lk", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-08-24T13:26:22.299+0000", 
+      "name": "HIV test positivity rate - TB (%)", 
+      "numerator": "#{O6wdXKIZ5L2.m4l9kAWQ9MR} + #{O6wdXKIZ5L2.HEyTsQbutqu}", 
+      "numeratorDescription": "HIV tests positive on TB patients", 
+      "publicAccess": "--------", 
+      "shortName": "HIV positivity rate - TB (%)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }, 
+        {
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-10-20T05:40:28.313+0000", 
+      "denominator": "#{MMDEdginCSv.m4l9kAWQ9MR}+#{MMDEdginCSv.HEyTsQbutqu}", 
+      "denominatorDescription": "Viral load tests - TB", 
+      "externalAccess": false, 
+      "id": "p1kwDk2xUj8", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-08-24T13:27:04.011+0000", 
+      "name": "PLHIV that are virologically suppressed - TB (%)", 
+      "numerator": "#{o8blexx4SAI.m4l9kAWQ9MR}+#{o8blexx4SAI.HEyTsQbutqu}", 
+      "numeratorDescription": "PLHIV virologically suppressed - TB", 
+      "publicAccess": "--------", 
+      "shortName": "Virologically suppressed - TB (%)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }, 
+        {
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-05-25T03:46:02.262+0000", 
+      "denominator": "#{sX7pWYXIVIi}", 
+      "denominatorDescription": "HIV tests performed", 
+      "description": "Percentage of all HIV tests performed that are HIV positive", 
+      "externalAccess": false, 
+      "id": "bD67D0kVEJQ", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-08-24T12:56:32.538+0000", 
+      "name": "HIV test positivity rate (%)", 
+      "numerator": "#{O6wdXKIZ5L2}", 
+      "numeratorDescription": "HIV tests positive", 
+      "publicAccess": "--------", 
+      "shortName": "HIV test positivity (%)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "access": "r-------", 
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }, 
+        {
+          "access": "rw------", 
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-10-20T05:49:36.024+0000", 
+      "denominator": "#{SJhkOoSLtlD}", 
+      "denominatorDescription": "Started ART 12 months ago 15-19 years", 
+      "externalAccess": false, 
+      "id": "gIyVFY53zkn", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-08-24T12:56:32.549+0000", 
+      "name": "ART retention rate after 12 months 15-19 years (%)", 
+      "numerator": "#{wyiiK6bYCkT}", 
+      "numeratorDescription": "Retained on ART for 12 months 15-19 years", 
+      "publicAccess": "--------", 
+      "shortName": "ART 12 month retention rate 15-19 y (%)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "access": "r-------", 
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }, 
+        {
+          "access": "rw------", 
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-10-19T12:13:49.289+0000", 
+      "denominator": "#{MMDEdginCSv}", 
+      "denominatorDescription": "PLHIV with viral load tests", 
+      "externalAccess": false, 
+      "id": "zqzX3zcosD5", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-08-24T12:56:32.562+0000", 
+      "name": "PLHIV that are virologically suppressed (%)", 
+      "numerator": "#{o8blexx4SAI}", 
+      "numeratorDescription": "PLHIV virologically suppressed", 
+      "publicAccess": "--------", 
+      "shortName": "PLHIV virologically suppressed (%)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "access": "rw------", 
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }, 
+        {
+          "access": "r-------", 
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-05-25T01:55:33.041+0000", 
+      "denominator": "#{DkmMEcubiPv.DkXxskAdwfa}", 
+      "denominatorDescription": "Total population", 
+      "description": "An annual estimate of HIV prevalence done by UNAIDS. For Trainingland, this was done down to district level (though this is not common in many countries)", 
+      "externalAccess": false, 
+      "id": "VL9YRn18ZIv", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-08-24T12:56:32.598+0000", 
+      "name": "HIV prevalence estimated (%)", 
+      "numerator": "#{ORYyhLEyzrA}", 
+      "numeratorDescription": "HIV estimate", 
+      "publicAccess": "--------", 
+      "shortName": "HIV prevalence estimated (%)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "access": "rw------", 
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }, 
+        {
+          "access": "r-------", 
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-10-19T11:53:39.762+0000", 
+      "denominator": "#{aCkpxvnPfPU}", 
+      "denominatorDescription": "Started ART 12 months ago", 
+      "externalAccess": false, 
+      "id": "JUvYLsNo43H", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-08-24T12:56:32.663+0000", 
+      "name": "ART retention rate after 12 months (%)", 
+      "numerator": "#{zG6feyqbeI7}", 
+      "numeratorDescription": "Retained on ART last 12 months", 
+      "publicAccess": "--------", 
+      "shortName": "ART 12 month retention rate (%)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "access": "r-------", 
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }, 
+        {
+          "access": "rw------", 
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-05-25T13:24:08.865+0000", 
+      "denominator": "#{UB52CkoGgjI.DkXxskAdwfa}", 
+      "denominatorDescription": "HIV tests positive (PMTCT)", 
+      "externalAccess": false, 
+      "id": "yyYFmFAfW7N", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-08-24T12:58:09.572+0000", 
+      "name": "HIV new treatment rate - PMTCT (%)", 
+      "numerator": "#{L9miUVrMTpE.DkXxskAdwfa}", 
+      "numeratorDescription": "HIV new on treatment (PMTCT)", 
+      "publicAccess": "--------", 
+      "shortName": "HIV new treatment rate - PMTCT (%)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "access": "r-------", 
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }, 
+        {
+          "access": "rw------", 
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-05-25T13:22:55.089+0000", 
+      "denominator": "#{O6wdXKIZ5L2.m4l9kAWQ9MR} + #{O6wdXKIZ5L2.HEyTsQbutqu}", 
+      "denominatorDescription": "HIV tests positive (TB)", 
+      "description": "The percentage of TB patients found to be HIV positive and put on anti-retroviral treatment", 
+      "externalAccess": false, 
+      "id": "ceabwLf2RFK", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-08-24T13:27:53.175+0000", 
+      "name": "HIV new treatment rate - TB (%)", 
+      "numerator": "#{bJty1TJXcPN.m4l9kAWQ9MR}+#{bJty1TJXcPN.HEyTsQbutqu}", 
+      "numeratorDescription": "HIV new on treatment (TB)", 
+      "publicAccess": "--------", 
+      "shortName": "HIV new treatment rate - TB (%)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }, 
+        {
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-10-22T08:48:40.260+0000", 
+      "decimals": 0, 
+      "denominator": "#{SJhkOoSLtlD}", 
+      "denominatorDescription": "PLHIV started ART 12 months ago (15-19 years)", 
+      "description": "Forecast/estimate on the number of people of those newly put on ART that will be retained for the next 12 months, based on the retention rate of the 12 previous months. 15-19 years only.", 
+      "externalAccess": false, 
+      "id": "ggDwovpCuk6", 
+      "indicatorType": {
+        "created": "2015-03-22T23:42:16.649+0000", 
+        "externalAccess": false, 
+        "id": "k4RGC3sMTzO", 
+        "lastUpdated": "2016-08-24T12:56:32.458+0000", 
+        "name": "Rate (factor=1)"
+      }, 
+      "lastUpdated": "2016-08-24T12:56:32.906+0000", 
+      "name": "ART retention forecast 15-19 years", 
+      "numerator": "#{IHWTweehDfn}*#{wyiiK6bYCkT}", 
+      "numeratorDescription": "PLHIV new on ART x New on ART retained for 12 months (15-19 years)", 
+      "publicAccess": "--------", 
+      "shortName": "ART retention forecast 15-19 years", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "access": "r-------", 
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }, 
+        {
+          "access": "rw------", 
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-10-22T08:49:05.422+0000", 
+      "decimals": 0, 
+      "denominator": "#{mMq620vRQT6}", 
+      "denominatorDescription": "PLHIV started ART 12 months ago (< 5 years)", 
+      "description": "Forecast/estimate on the number of people of those newly put on ART that will be retained for the next 12 months, based on the retention rate of the 12 previous months. < 5 years only.", 
+      "externalAccess": false, 
+      "id": "mnFxSgobDTw", 
+      "indicatorType": {
+        "created": "2015-03-22T23:42:16.649+0000", 
+        "externalAccess": false, 
+        "id": "k4RGC3sMTzO", 
+        "lastUpdated": "2016-08-24T12:56:32.458+0000", 
+        "name": "Rate (factor=1)"
+      }, 
+      "lastUpdated": "2016-08-24T12:56:32.917+0000", 
+      "name": "ART retention forecast < 5 years", 
+      "numerator": "#{yAU8wDmsBnn}*#{llzz0kO83Ht}", 
+      "numeratorDescription": "PLHIV new on ART x New on ART retained for 12 months (< 5 years)", 
+      "publicAccess": "--------", 
+      "shortName": "ART retention forecast < 5 years", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "access": "rw------", 
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }, 
+        {
+          "access": "r-------", 
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-10-20T05:39:32.515+0000", 
+      "denominator": "#{MMDEdginCSv.iuJjezRfU7l} + #{MMDEdginCSv.tX7GCVNiOLA}", 
+      "denominatorDescription": "Viral load tests - other", 
+      "externalAccess": false, 
+      "id": "L3HjhNcCQCt", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-08-24T13:25:40.752+0000", 
+      "name": "PLHIV that are virologically suppressed - Other (%)", 
+      "numerator": "#{o8blexx4SAI.iuJjezRfU7l}+#{o8blexx4SAI.tX7GCVNiOLA}", 
+      "numeratorDescription": "PLHIV virologically suppressed - other", 
+      "publicAccess": "--------", 
+      "shortName": "Virologically suppressed - Other (%)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }, 
+        {
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-10-20T05:53:27.748+0000", 
+      "denominator": "#{InHS2OAUNuD}", 
+      "denominatorDescription": "HIV tests positive 15-19 years", 
+      "externalAccess": false, 
+      "id": "NOTVoniJjCb", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-08-24T12:56:32.711+0000", 
+      "name": "HIV new treatment rate 15-19 years (%)", 
+      "numerator": "#{IHWTweehDfn}", 
+      "numeratorDescription": "New on ART 15-19 years", 
+      "publicAccess": "--------", 
+      "shortName": "HIV new treatment rate 15-19 years (%)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "access": "rw------", 
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }, 
+        {
+          "access": "r-------", 
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-10-20T05:55:14.424+0000", 
+      "denominator": "#{SiXPYGztXCD}", 
+      "denominatorDescription": "HIV tests performed 15-19 years", 
+      "externalAccess": false, 
+      "id": "xzc69CUxXbN", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-08-24T12:56:32.722+0000", 
+      "name": "HIV test positivity rate 15-19 years (%)", 
+      "numerator": "#{InHS2OAUNuD}", 
+      "numeratorDescription": "HIV tests positive 15-19 years", 
+      "publicAccess": "--------", 
+      "shortName": "HIV test positivity rate 15-19 years (%)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "access": "rw------", 
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }, 
+        {
+          "access": "r-------", 
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-10-20T05:52:24.179+0000", 
+      "denominator": "#{RjQu6dgcfuX}", 
+      "denominatorDescription": "Tested HIV positive < 5 years", 
+      "externalAccess": false, 
+      "id": "onTVCvHmjMI", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-08-24T12:56:32.745+0000", 
+      "name": "HIV new treatment rate < 5 years (%)", 
+      "numerator": "#{yAU8wDmsBnn}", 
+      "numeratorDescription": "New on ART < 5 years", 
+      "publicAccess": "--------", 
+      "shortName": "HIV new treatment rate < 5 years (%)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "access": "rw------", 
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }, 
+        {
+          "access": "r-------", 
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-10-20T05:54:19.548+0000", 
+      "denominator": "#{kj8V4mqtth7}", 
+      "denominatorDescription": "HIV tests performed < 5 years", 
+      "externalAccess": false, 
+      "id": "TQv3lcKHi69", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-08-24T12:56:32.756+0000", 
+      "name": "HIV test positivity rate < 5 years (%)", 
+      "numerator": "#{RjQu6dgcfuX}", 
+      "numeratorDescription": "HIV tests positive < 5 years", 
+      "publicAccess": "--------", 
+      "shortName": "HIV test positivity rate < 5 years (%)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "access": "rw------", 
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }, 
+        {
+          "access": "r-------", 
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-10-20T05:56:13.094+0000", 
+      "denominator": "#{kGB1uxpY0P0}", 
+      "denominatorDescription": "Viral load tests 15-19 years", 
+      "externalAccess": false, 
+      "id": "ux16uCIgdhT", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-08-24T12:56:32.767+0000", 
+      "name": "PLHIV that are virologically suppressed 15-19 years (%)", 
+      "numerator": "#{yH7ev5nG2VV}", 
+      "numeratorDescription": "PLHIV virologically suppressed 15-19 years", 
+      "publicAccess": "--------", 
+      "shortName": "Virologically suppressed 15-19 years (%)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "access": "rw------", 
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }, 
+        {
+          "access": "r-------", 
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-10-20T05:48:39.478+0000", 
+      "denominator": "#{mMq620vRQT6}", 
+      "denominatorDescription": "Started ART 12 months ago < 5 years", 
+      "externalAccess": false, 
+      "id": "QogxWKs3hlc", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-08-24T12:56:32.779+0000", 
+      "name": "ART retention rate after 12 months < 5 years (%)", 
+      "numerator": "#{llzz0kO83Ht}", 
+      "numeratorDescription": "Retained on ART for 12 months < 5 years", 
+      "publicAccess": "--------", 
+      "shortName": "ART 12 month retention rate < 5 y (%)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "access": "r-------", 
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }, 
+        {
+          "access": "rw------", 
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }
+      ]
+    }, 
+    {
+      "annualized": true, 
+      "created": "2015-10-27T13:44:20.370+0000", 
+      "decimals": 1, 
+      "denominator": "#{ORYyhLEyzrA}", 
+      "denominatorDescription": "HIV estimate", 
+      "externalAccess": false, 
+      "id": "gmvB06PTbdm", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-08-24T12:56:32.790+0000", 
+      "name": "HIV care coverage (%)", 
+      "numerator": "#{kcIuDtdn1f9}", 
+      "numeratorDescription": "PLHIV in care", 
+      "publicAccess": "--------", 
+      "shortName": "HIV care coverage (%)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "access": "rw------", 
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }, 
+        {
+          "access": "r-------", 
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-12-04T06:47:17.840+0000", 
+      "decimals": 1, 
+      "denominator": "#{bJty1TJXcPN}", 
+      "denominatorDescription": "PLHIV new on ART", 
+      "externalAccess": false, 
+      "id": "aSxyjtSGaIe", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-08-24T12:56:32.801+0000", 
+      "name": "New on ART of new in care (%)", 
+      "numerator": "#{zSxLil5WpeA}", 
+      "numeratorDescription": "PLHIV new in care", 
+      "publicAccess": "--------", 
+      "shortName": "New on ART of new in care (%)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "access": "r-------", 
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }, 
+        {
+          "access": "rw------", 
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-10-29T08:22:56.705+0000", 
+      "decimals": 1, 
+      "denominator": "#{kcIuDtdn1f9}", 
+      "denominatorDescription": "PLHIV in care", 
+      "externalAccess": false, 
+      "id": "aaiMfJpzDFW", 
+      "indicatorType": {
+        "created": "2015-03-22T23:41:28.852+0000", 
+        "externalAccess": false, 
+        "id": "hmSnCXmLYwt", 
+        "lastUpdated": "2016-08-24T12:56:32.393+0000", 
+        "name": "Percentage"
+      }, 
+      "lastUpdated": "2016-08-24T12:56:32.884+0000", 
+      "name": "PLHIV in care on ART (%)", 
+      "numerator": "#{mqIVTKwfWl7}", 
+      "numeratorDescription": "PLHIV on ART", 
+      "publicAccess": "--------", 
+      "shortName": "In care on ART (%)", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "access": "r-------", 
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }, 
+        {
+          "access": "rw------", 
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }
+      ]
+    }, 
+    {
+      "annualized": false, 
+      "created": "2015-10-22T08:41:17.280+0000", 
+      "decimals": 0, 
+      "denominator": "#{aCkpxvnPfPU}", 
+      "denominatorDescription": "PLHIV started on ART 12 months ago", 
+      "description": "Forecast/estimate on the number of people of those newly put on ART that will be retained for the next 12 months, based on the retention rate of the 12 previous months.", 
+      "externalAccess": false, 
+      "id": "zyLrEXF2Eja", 
+      "indicatorType": {
+        "created": "2015-03-22T23:42:16.649+0000", 
+        "externalAccess": false, 
+        "id": "k4RGC3sMTzO", 
+        "lastUpdated": "2016-08-24T12:56:32.458+0000", 
+        "name": "Rate (factor=1)"
+      }, 
+      "lastUpdated": "2016-08-24T12:56:32.895+0000", 
+      "name": "ART retention forecast", 
+      "numerator": "#{bJty1TJXcPN}*#{zG6feyqbeI7}", 
+      "numeratorDescription": "PLHIV new on ART x New on ART retained for 12 months", 
+      "publicAccess": "--------", 
+      "shortName": "ART retention forecast", 
+      "user": {
+        "created": "2016-08-24T09:09:24.757+0000", 
+        "externalAccess": false, 
+        "id": "nMMuaCz8IZE", 
+        "lastUpdated": "2016-08-24T09:09:24.757+0000", 
+        "name": "Olav Poppe"
+      }, 
+      "userGroupAccesses": [
+        {
+          "access": "r-------", 
+          "displayName": "HIV", 
+          "id": "p6J0XPSyxgB", 
+          "userGroupUid": "p6J0XPSyxgB"
+        }, 
+        {
+          "access": "rw------", 
+          "displayName": "Metadata administrator", 
+          "id": "DSmKT2IO54W", 
+          "userGroupUid": "DSmKT2IO54W"
+        }
+      ]
+    }
+  ]
+}

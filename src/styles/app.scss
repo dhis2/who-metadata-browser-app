@@ -1,0 +1,32 @@
+@import '../../node_modules/d2-ui/scss/HeaderBar.scss';
+@import './bootstrap.css';
+@import '../components/SectionTable/SectionTable.css';
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+.content-body {
+    font-size: 14px;
+    margin-top: 3rem;
+}
+
+@media only screen and (min-width : 768px) {
+    .flex-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .flex-row > [class*='col-'] {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .flex-row:before,
+    .flex-row:after {
+    content: initial;
+    }
+
+    .flex-row > .left-border {
+      border-left: 1px solid;
+    }
+}

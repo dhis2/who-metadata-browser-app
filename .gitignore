@@ -1,0 +1,15 @@
+# Jetbrains files
+.idea
+*.iml
+
+# Project folders/dependencies
+node_modules
+build
+buildzip
+coverage
+/.vscode/
+
+# Misc files
+npm-debug.log
+
+/nbproject/*
