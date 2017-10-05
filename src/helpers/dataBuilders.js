@@ -162,7 +162,7 @@ export default class dataBuilders {
                             }
 
                             if (index === (allRows.length - 1)) {
-                                Object.assign(allRows[firstMergeRow][i], { rowSpan: index - firstMergeRow + 1 });
+                                Object.assign(allRows[firstMergeRow][i], { rowSpan: index - (firstMergeRow + 1) });
 
                                 for (let rowLoopIndex = firstMergeRow + 1; rowLoopIndex <= index; rowLoopIndex++) {
                                     allRows[rowLoopIndex].splice(i, 1);

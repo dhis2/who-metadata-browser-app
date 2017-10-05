@@ -4,6 +4,9 @@
 This software is distributed under the terms of the GNU General Public License version 3 (GPL Version 3), copied verbatim in the file “COPYING”.  In applying this license, WHO does not waive any of the privileges and immunities enjoyed by WHO under national or international law or submit to any national court jurisdiction.
 */
 
+/* eslint-disable jsx-a11y/label-has-for */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+
 import React from 'react';
 import { Table, TableBody, TableRow, TableRowColumn } from 'material-ui/Table';
 

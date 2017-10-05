@@ -4,6 +4,9 @@
 This software is distributed under the terms of the GNU General Public License version 3 (GPL Version 3), copied verbatim in the file “COPYING”.  In applying this license, WHO does not waive any of the privileges and immunities enjoyed by WHO under national or international law or submit to any national court jurisdiction.
 */
 
+/* eslint-disable no-useless-escape */
+/* eslint-disable no-unused-vars */
+
 // utils
 import { isDefined, isArray, isObject } from 'd2-utilizr';
 import log from 'loglevel';
@@ -404,7 +407,7 @@ export default class Dispatcher {
                 return sourceData;
             })
             .catch((error) => {
-                log.error(`error retrieving dataElement with id ${dId}: ${error}`)
+                log.error(`error retrieving dataElement with id ${dId}: ${error}`);
                 return [{ dataElementName: `${dId} NOT FOUND` }];
             })
         );
@@ -425,7 +428,7 @@ export default class Dispatcher {
         }
 
         return dataElements.map((d) => {
-            const dFormatted = d.replace(/[#\{\}.]/g,'');
+            const dFormatted = d.replace(/[#\{\}.]/g, '');
             return dFormatted;
         });
     }
@@ -548,7 +551,7 @@ export default class Dispatcher {
             .then((result) => {
                 result.rows.forEach((r) => {
                     if (r.length >= 3) {
-                        const itemId = r[0].split(".")[0];
+                        const itemId = r[0].split('.')[0];
                         const dataInst = dataAsMap.get(itemId);
                         if (dataInst) {
                             let value = r[2];

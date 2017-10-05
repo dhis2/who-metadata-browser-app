@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import WHOMenuBuilder from '../../src/helpers/WHOMenuBuilder';
 import testData from './testData/whoData.json';
 

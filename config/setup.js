@@ -1,4 +1,5 @@
 /* istanbul ignore next */
+/* eslint-disable */
 global.chai = require('chai');
 global.sinon = require('sinon');
    

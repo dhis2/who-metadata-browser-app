@@ -4,6 +4,9 @@
 This software is distributed under the terms of the GNU General Public License version 3 (GPL Version 3), copied verbatim in the file “COPYING”.  In applying this license, WHO does not waive any of the privileges and immunities enjoyed by WHO under national or international law or submit to any national court jurisdiction.
 */
 
+/* eslint-disable react/sort-comp */
+/* eslint-disable class-methods-use-this */
+
 import React, { Component, PropTypes } from 'react';
 import { isArray } from 'd2-utilizr';
 import TextField from 'material-ui/TextField';
@@ -29,7 +32,7 @@ class SearchableList extends Component {
 
     filterMultiArray(items) {
         const filterItems = [];
-        items.forEach(i => {
+        items.forEach((i) => {
             const filterSubItems = this.filterSingleArray(i.subItems);
             if (filterSubItems && filterSubItems.length > 0) {
                 filterItems.push(Object.assign({}, i, { subItems: filterSubItems }));

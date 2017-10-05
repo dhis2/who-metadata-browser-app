@@ -121,7 +121,7 @@ class TbcWHOMenuContent extends Component {
                                 return (
                                     <Paper style={{ padding: 10, backgroundColor: 'white' }}>
                                         <div style={{ overflow: 'auto', height: ((this.props.appHeight - 315) > 300 ? (this.props.appHeight - 315) : 300) }}>
-                                            {this.props.references[this.state.referenceId].map((i,index) => {
+                                            {this.props.references[this.state.referenceId].map((i, index) => {
                                                 if (i.isDivider) {
                                                     return (<div key={index} style={{ marginBottom: 10 }}><Divider /></div>);
                                                 }

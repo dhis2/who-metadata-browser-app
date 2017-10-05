@@ -67,7 +67,7 @@ class FormulaRequester extends RequesterBase {
                         this.logit(`error in formula ${exprFormula}part ${f}`);
                         return '[]';
                     }
-                    wrappedF = wrappedF.substring(1,wrappedF.length);
+                    wrappedF = wrappedF.substring(1, wrappedF.length);
                     wrappedF = ` ${wrappedF.charAt(0)} [${wrappedF.substring(1, wrappedF.length)}]`;
                 } else {
                     wrappedF = `[${wrappedF}]`;

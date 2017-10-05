@@ -4,11 +4,12 @@
 This software is distributed under the terms of the GNU General Public License version 3 (GPL Version 3), copied verbatim in the file “COPYING”.  In applying this license, WHO does not waive any of the privileges and immunities enjoyed by WHO under national or international law or submit to any national court jurisdiction.
 */
 
+/* eslint-disable class-methods-use-this */
+
 import React, { Component, PropTypes } from 'react';
 
 // components
 import CircularProgress from 'material-ui/CircularProgress';
-// import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 
 // theme
 import AppTheme from '../../styles/theme';

@@ -1,3 +1,5 @@
+/*eslint-disable */
+
 beforeEach(function beforeEachSetup() {
     this.sandbox = global.sinon.sandbox.create();
     global.stub = this.sandbox.stub.bind(this.sandbox);

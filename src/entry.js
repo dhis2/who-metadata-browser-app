@@ -21,7 +21,7 @@ import addD2Extensions from './d2/d2Extensions';
 
 // project components
 import LoadingIndicatorApp from './components/LoadingIndicators/LoadingIndicatorApp.component';
-import App from './App';
+import App from './App.component';
 
 // project
 import Dispatcher from './Dispatcher';
