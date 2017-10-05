@@ -53,6 +53,13 @@ To run the development server
 npm start
 ```
 
+To build the app (a zip file will be created in the buildzip directory)
+```sh
+npm run build
+```
+
+
+
 ## License
 © Copyright 2017 the World Health Organization (WHO).
 
