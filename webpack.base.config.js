@@ -18,7 +18,7 @@ module.exports = {
     },
     module: {
         // Loaders that are used to load files
-        loaders: [
+        rules: [
             // Babel loader to transpile ES2015 to ES5 code
             {
                 test: /\.jsx?$/,

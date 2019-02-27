@@ -41,16 +41,17 @@ function getDhisConfig(fileContents) {
     return convertedConfig;
 }  
 
-function getFileContents(fileName) {    
-    var fs = require('fs');
-    var data = fs.readFileSync(fileName, 'utf8');    
-    return getDhisConfig(data);
+
+function getConfig() {
+    const dhisConfigPath = process.env.DHIS2_HOME && `${process.env.DHIS2_HOME.trimRight('/')}/config`;
+    console.log(`using config.json from ${dhisConfigPath}`)
+    return require(dhisConfigPath);
 }
 
-const dhisConfigPath = process.env.DHIS2_HOME && `${process.env.DHIS2_HOME}/appDev.config`;
 
 try {
-    dhisConfig = getFileContents(dhisConfigPath);
+    dhisConfig = getConfig();
+    console.log(dhisConfig)
 } catch (e) {
     // Failed to load config file - use default config
     console.log('\nWARNING! Failed to load DHIS config:' + e.message);
@@ -67,6 +68,9 @@ webpackConfig.plugins = [
 ];
 
 function log(req, res, opt) {
+    if ( req.url === '/manifest.webapp' ) {
+        return req.url;
+    }
     req.headers.Authorization = dhisConfig.authorization;
     console.log('[PROXY]' + req.url);
 }
@@ -75,11 +79,14 @@ webpackConfig.devServer = {
     contentBase: './src',
     progress: true,
     port: 8081,
-    inline: true,
-    proxy: [
-        { path: '/dhis-web-commons/**', target: dhisConfig.baseUrl, bypass: log },
-        { path: '/api/*', target: dhisConfig.baseUrl, bypass: log },
-    ],
+    open: true,
+    proxy: {
+        '/dhis-web-commons/**': {
+            target: dhisConfig.baseUrl,
+            bypass: log,
+            changeOrigin: false
+        }
+    }
 };
 
 module.exports = webpackConfig;

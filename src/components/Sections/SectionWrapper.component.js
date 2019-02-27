@@ -7,17 +7,18 @@ This software is distributed under the terms of the GNU General Public License v
 /* eslint-disable react/prefer-stateless-function */
 
 import React from 'react';
+import PropTypes from 'proptypes';
 import Paper from 'material-ui/Paper';
 
-export default React.createClass({
+export default class extends React.Component {
 
-    propTypes: {
-        children: React.PropTypes.node,
-    },
+    static propTypes = {
+        children: PropTypes.node,
+    }
 
-    contextTypes: {
-        muiTheme: React.PropTypes.object,
-    },
+    static contextTypes = {
+        muiTheme: PropTypes.object,
+    }
 
     render() {
         const myStyle = this.context.muiTheme.sectionWrapper;
@@ -25,5 +26,5 @@ export default React.createClass({
         return (
             <Paper style={myStyle}>{this.props.children}</Paper>
         );
-    },
-});
+    }
+}

@@ -44,7 +44,7 @@ npm install
 ```
 
 To set up your DHIS2 instance to work with the development service you will need to add the development servers address to the CORS whitelist. You can do this within the DHIS2 System Settings app under the _access_ tab. On the access tab add `http://localhost:8081` to the CORS Whitelist.
-> The app assumes your dhis2 instance is located at `http://localhost:8080` and that you have an account available with username `admin` and password `district`. If this is not the case, you can add a configuration file (plain text file) to the directory exposed by the DHIS2_HOME environment variable. Name the file appDev.config and add the following two lines to the file (skip the number and the quotes): 1. "baseURL [dhis2 instance]" (example: "baseURL http://localhost:8080"). 2. "authorization [authorizationType] [username:password]" (example: "authorization Basic admin:district").
+> The app assumes your dhis2 instance is located at `http://localhost:8080` and that you have an account available with username `admin` and password `district`. If this is not the case, you can add a configuration file (plain text file) to the directory exposed by the DHIS2_HOME environment variable.
 
 This should allow you to be able to run the following node commands
 

@@ -7,7 +7,8 @@ This software is distributed under the terms of the GNU General Public License v
 /* eslint-disable react/sort-comp */
 /* eslint-disable class-methods-use-this */
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'proptypes';
 import { isArray } from 'd2-utilizr';
 import TextField from 'material-ui/TextField';
 
@@ -108,7 +109,7 @@ SearchableList.defaultProps = {
 };
 
 SearchableList.contextTypes = {
-    muiTheme: React.PropTypes.object,
+    muiTheme: PropTypes.object,
 };
 
 export default SearchableList;

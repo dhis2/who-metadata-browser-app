@@ -5,6 +5,7 @@ This software is distributed under the terms of the GNU General Public License v
 */
 
 import React from 'react';
+import PropTypes from 'proptypes';
 import rx from 'rxjs/Rx';
 import log from 'loglevel';
 import { isDefined } from 'd2-utilizr';
@@ -57,17 +58,9 @@ const mainContentTopPaddingPhone = 0;
 const phoneModeUpperThreshold = 768; // 768
 const tabletModeUpperThreshold = 1200; // 1200
 const modes = viewModes;
-export default React.createClass({
-    propTypes: {
-        d2: React.PropTypes.object,
-        WHOData: React.PropTypes.object,
-    },
 
-    childContextTypes: {
-        d2: React.PropTypes.object,
-    },
+class App extends React.Component {
 
-    mixins: [MuiThemeMixin],
 
     getDefaultProps() {
         return {
@@ -76,7 +69,7 @@ export default React.createClass({
                 referencesMenu: {},
             },
         };
-    },
+    }
 
     getInitialState() {
         const width = this.getMyWidth();
@@ -96,13 +89,13 @@ export default React.createClass({
             height: this.getMyHeight(),
             initialRun: true,
         };
-    },
+    }
 
     getChildContext() {
         return {
             d2: this.props.d2,
         };
-    },
+    }
 
     componentDidMount() {
         // add subscribtions
@@ -115,7 +108,7 @@ export default React.createClass({
 
         // listen to resizeEvent to be able to change pageDesign
         window.addEventListener('resize', this.onDimensionChange);
-    },
+    }
 
     componentWillUnmount() {
         this.subscriptions.forEach((sub) => {
@@ -123,11 +116,11 @@ export default React.createClass({
         });
 
         window.removeEventListener('resize', this.onDimensionChange);
-    },
+    }
 
     onDimensionChange() {
         this.resizeStream.next(1);
-    },
+    }
 
     getResizeStreamObserver() {
         const resizeStream = this.resizeStream = new rx.Subject();
@@ -144,7 +137,7 @@ export default React.createClass({
                 log.debug('resizeStream completed');
             }
         );
-    },
+    }
 
     getMenuChangedObserver() {
         menuSelectionStore
@@ -159,7 +152,7 @@ export default React.createClass({
                 log.debug('menuStream completed');
             }
         );
-    },
+    }
 
     getSelectionChangedObserver() {
         selectedStore.subscribe(
@@ -251,7 +244,7 @@ export default React.createClass({
                 log.debug('selectedStore completed');
             }
         );
-    },
+    }
 
     getWaitingForContentObserver() {
         dispatcherActions.waitingForMainContent.subscribe(
@@ -267,7 +260,7 @@ export default React.createClass({
                 log.debug('waitingForContent completed');
             }
         );
-    },
+    }
 
     getResetContentsObserver() {
         dispatcherActions.resetContents.subscribe(
@@ -281,7 +274,7 @@ export default React.createClass({
                 log.debug('resetContens completed');
             }
         );
-    },
+    }
 
     getViewMode(specifiedWidth) {
         let mode;
@@ -296,29 +289,29 @@ export default React.createClass({
             mode = modes.tablet;
         }
         return mode;
-    },
+    }
 
-    getMyHeight() {
+    getMyHeight = () => {
         return $(window).height();
-    },
+    }
 
-    getMyWidth() {
+    getMyWidth = () => {
         return $(window).width();
-    },
+    }
 
     getGroupMenuItems(groupMenuVisible) {
         if (groupMenuVisible) {
             return menuStore.state.groups[this.state.typeMenuValue];
         }
         return [];
-    },
+    }
 
     getMenuItems(groupMenuVisible, itemMenuVisible) {
         if (itemMenuVisible) {
             return (groupMenuVisible ? this.buildMenuItems() : menuStore.state.items[this.state.typeMenuValue]);
         }
         return [];
-    },
+    }
 
     itemMenuIsVisible(groupMenuVisible) {
         if (this.state.typeMenuValue !== 'null' && this.state.typeMenuValue !== '_S') {
@@ -331,7 +324,7 @@ export default React.createClass({
             }
         }
         return false;
-    },
+    }
 
     buildMenuItems() {
         if (this.state.groupMenuValue !== 'ALLBYGROUPS') {
@@ -345,7 +338,7 @@ export default React.createClass({
             }
         });
         return menuItems;
-    },
+    }
 
     groupMenuIsVisible() {
         if (this.state.typeMenuValue !== 'null') {
@@ -355,7 +348,7 @@ export default React.createClass({
             }
         }
         return false;
-    },
+    }
 
     selectionChanged(selection) {
         const newState = {};
@@ -373,7 +366,7 @@ export default React.createClass({
         newState.searchItemMenuValue = selection.searchItem;
 
         this.setState(newState);
-    },
+    }
 
     handleDimensionChange() {
         const newWidth = this.getMyWidth();
@@ -405,7 +398,7 @@ export default React.createClass({
 
         this.setState(newStateData);
         log.debug(this.getMyWidth());
-    },
+    }
 
     resetMainContent(error) {
         const content = { sections: [] };
@@ -413,12 +406,12 @@ export default React.createClass({
             content.error = error;
         }
         return content;
-    },
+    }
 
     showSearch(typeId) {
         const type = menuStore.state.types.find(t => t.id === typeId);
         return isDefined(type) && isDefined(type.isSearch);
-    },
+    }
 
     toggleLeftMenu() {
         const newStateData = {};
@@ -429,7 +422,7 @@ export default React.createClass({
         }
         newStateData.leftMenuOpen = !this.state.leftMenuOpen;
         this.setState(newStateData);
-    },
+    }
 
     toggleRightMenu() {
         const newStateData = {};
@@ -440,32 +433,32 @@ export default React.createClass({
         }
         newStateData.rightMenuOpen = !this.state.rightMenuOpen;
         this.setState(newStateData);
-    },
+    }
 
     toggleLeftMenuExpanded() {
         this.setState({ leftMenuExpanded: !this.state.leftMenuExpanded });
-    },
+    }
     toggleRightMenuExpanded() {
         this.setState({ rightMenuExpanded: !this.state.rightMenuExpanded });
-    },
+    }
 
     handleItemUpdate(value) {
         if (this.getViewMode() === modes.phone) {
             this.setState({ leftMenuOpen: false });
         }
         userActions.setItem(value);
-    },
+    }
 
     handleSearchItemUpdate(value) {
         if (this.getViewMode() === modes.phone) {
             this.setState({ leftMenuOpen: false });
         }
         userActions.setSearchItem(value);
-    },
+    }
 
     handleSectionElementClick(elementData) {
         userActions.switchContent(elementData);
-    },
+    }
 
     toggleMobileMenu(event, value) {
         if (value === 'M') {
@@ -473,7 +466,7 @@ export default React.createClass({
         } else {
             this.toggleRightMenu();
         }
-    },
+    }
 
     render() {
         const groupMenuVisible = this.groupMenuIsVisible();
@@ -607,5 +600,18 @@ export default React.createClass({
                 </div>
             </div>
         );
-    },
-});
+    }
+}
+
+App.prototype.propTypes = {
+    d2: PropTypes.object,
+    WHOData: PropTypes.object,
+}
+
+App.prototype.childContextTypes = {
+    d2: PropTypes.object,
+}
+
+App.prototype.mixins = [MuiThemeMixin]
+
+export default App;

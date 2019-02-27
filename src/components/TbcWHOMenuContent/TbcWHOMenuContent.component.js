@@ -6,7 +6,8 @@ This software is distributed under the terms of the GNU General Public License v
 
 /* eslint-disable class-methods-use-this */
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'proptypes';
 
 // materialUI
 import Paper from 'material-ui/Paper';

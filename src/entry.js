@@ -9,7 +9,6 @@ This software is distributed under the terms of the GNU General Public License v
 
 import React from 'react';
 import { render } from 'react-dom';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import axios from 'axios';
 import moment from 'moment';
 import log from 'loglevel';
@@ -33,9 +32,6 @@ import './styles/app.scss';
 
 // stores
 import menuStore from './stores/menuStore';
-
-// The react-tap-event-plugin is required by material-ui to make touch screens work properly with onClick events
-injectTapEventPlugin();
 
 log.setLevel(process.env.NODE_ENV === 'production' ? log.levels.ERROR : log.levels.TRACE);
 const dhisDevConfig = DHIS_CONFIG; // eslint-disable-line

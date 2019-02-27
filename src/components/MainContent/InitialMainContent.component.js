@@ -5,6 +5,7 @@ This software is distributed under the terms of the GNU General Public License v
 */
 
 import React from 'react';
+import PropTypes from 'proptypes';
 import { Layer, Label, Text, Tag, Stage, Arrow } from 'react-konva';
 import { viewModes } from '../../constants/configConstants';
 
@@ -92,10 +93,10 @@ const InitialMainContent = (props, context) => {
 };
 
 InitialMainContent.propTypes = {
-    viewMode: React.PropTypes.number,
+    viewMode: PropTypes.number,
 };
 InitialMainContent.contextTypes = {
-    muiTheme: React.PropTypes.object,
+    muiTheme: PropTypes.object,
 };
 
 export default InitialMainContent;

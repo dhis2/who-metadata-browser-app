@@ -8,23 +8,24 @@ This software is distributed under the terms of the GNU General Public License v
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 
 import React from 'react';
+import PropTypes from 'proptypes';
 import { Table, TableBody, TableRow, TableRowColumn } from 'material-ui/Table';
 
 import sectionTableConstants from './SectionTable.constants';
 import LoadingIndicator from '../LoadingIndicators/LoadingIndicator.component';
 
 
-export default React.createClass({
+export default class extends React.Component {
 
-    propTypes: {
-        data: React.PropTypes.object.isRequired,
-        onCellClick: React.PropTypes.func,
-    },
-    contextTypes: {
-        muiTheme: React.PropTypes.object,
-    },
+    static propTypes = {
+        data: PropTypes.object.isRequired,
+        onCellClick: PropTypes.func,
+    }
+    static contextTypes = {
+        muiTheme: PropTypes.object,
+    }
 
-    getTableHeader(muiTheme) {
+    getTableHeader = (muiTheme) => {
         const headerColumns = this.props.data.header.map((h, index) => {
             const style = Object.assign({}, muiTheme.tableHeaderColumn);
             const width = this.props.data.colWidth && this.props.data.colWidth[index];
@@ -40,9 +41,9 @@ export default React.createClass({
         });
 
         return (<TableRow key="header" style={muiTheme.tableHeaderRow}>{headerColumns}</TableRow>);
-    },
+    }
 
-    getTableRows(muiTheme) {
+    getTableRows = (muiTheme) => {
         let tableRows = [];
         if (!this.props.data.waitingForContent === true) {
             tableRows = this.props.data.body.map((r, rowIndex) => {
@@ -72,15 +73,15 @@ export default React.createClass({
             });
         }
         return tableRows;
-    },
+    }
 
-    getCellContents(value, onClickData) {
+    getCellContents = (value, onClickData) => {
         return (onClickData ? <div><label className="clickable-item" style={{ cursor: 'pointer' }} onClick={() => this.handleCellClick(onClickData)}>{value}</label></div> : <div>{value}</div>);
-    },
+    }
 
-    handleCellClick(onClickData) {
+    handleCellClick = (onClickData) => {
         this.props.onCellClick(onClickData);
-    },
+    }
 
     render() {
         const muiTheme = (this.context && this.context.muiTheme) || {};
@@ -103,5 +104,5 @@ export default React.createClass({
                 }
             </div>
         );
-    },
-});
+    }
+}

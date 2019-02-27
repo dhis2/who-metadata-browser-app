@@ -8,22 +8,24 @@ This software is distributed under the terms of the GNU General Public License v
 /* eslint-disable prefer-const */
 
 import React from 'react';
+import PropTypes from 'proptypes';
 import { Col } from 'react-bootstrap';
 import isDefined from 'd2-utilizr/lib/isDefined';
 
-export default React.createClass({
-    propTypes: {
-        value: React.PropTypes.string,
-        xs: React.PropTypes.number,
-        sm: React.PropTypes.number,
-        md: React.PropTypes.number,
-        lg: React.PropTypes.number,
-        classNames: React.PropTypes.string,
-        isLabel: React.PropTypes.bool,
-    },
-    contextTypes: {
-        muiTheme: React.PropTypes.object,
-    },
+export default class extends React.Component {
+    static propTypes = {
+        value: PropTypes.string,
+        xs: PropTypes.number,
+        sm: PropTypes.number,
+        md: PropTypes.number,
+        lg: PropTypes.number,
+        classNames: PropTypes.string,
+        isLabel: PropTypes.bool,
+    }
+    static contextTypes = {
+        muiTheme: PropTypes.object,
+    }
+
     render() {
         let { isLabel, value, ...config } = this.props;
 
@@ -44,5 +46,5 @@ export default React.createClass({
         }
 
         return (<Col {...config}>{value}</Col>);
-    },
-});
+    }
+}

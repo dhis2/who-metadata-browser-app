@@ -8,7 +8,8 @@ This software is distributed under the terms of the GNU General Public License v
 /* eslint-disable class-methods-use-this */
 /* eslint-disable new-cap */
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'proptypes';
 import { findDOMNode } from 'react-dom';
 import log from 'loglevel';
 import { isDefined, isArray } from 'd2-utilizr';
@@ -303,7 +304,7 @@ DynamicLoadingList.defaultProps = {
 };
 
 DynamicLoadingList.contextTypes = {
-    muiTheme: React.PropTypes.object,
+    muiTheme: PropTypes.object,
 };
 
 export default DynamicLoadingList;

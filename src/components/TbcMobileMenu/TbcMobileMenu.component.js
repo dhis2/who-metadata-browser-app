@@ -5,6 +5,7 @@ This software is distributed under the terms of the GNU General Public License v
 */
 
 import React from 'react';
+import PropTypes from 'proptypes';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import IconButton from 'material-ui/IconButton';
@@ -24,7 +25,7 @@ const TbcMobileMenu = props => (
 );
 
 TbcMobileMenu.propTypes = {
-    onSelection: React.PropTypes.func,
+    onSelection: PropTypes.func,
 };
 
 export default TbcMobileMenu;

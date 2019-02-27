@@ -5,32 +5,20 @@ This software is distributed under the terms of the GNU General Public License v
 */
 
 import React from 'react';
+import PropTypes from 'proptypes';
 import Sections from '../Sections/Sections.component';
 import LoadingIndicatorPage from '../LoadingIndicators/LoadingIndicatorPage.component';
 import InitialMainContent from './InitialMainContent.component';
 
-const MainContent = React.createClass({
-    propTypes: {
-        style: React.PropTypes.object,
-        sectionsData: React.PropTypes.array,
-        header: React.PropTypes.string,
-        subHeader: React.PropTypes.string,
-        onSectionElementClick: React.PropTypes.func,
-        error: React.PropTypes.string,
-        waitingForContent: React.PropTypes.bool,
-        initialState: React.PropTypes.bool,
-        viewMode: React.PropTypes.number,
-    },
-    contextTypes: {
-        muiTheme: React.PropTypes.object,
-    },
+class MainContent extends React.Component {
+
     getDefaultProps() {
         return {
             style: {},
             sectionsData: [],
             waitingForContent: false,
         };
-    },
+    }
     render() {
         let contents;
 
@@ -65,7 +53,23 @@ const MainContent = React.createClass({
         }
             </div>
         );
-    },
-});
+    }
+}
+
+MainContent.prototype.propTypes = {
+    style: PropTypes.object,
+    sectionsData: PropTypes.array,
+    header: PropTypes.string,
+    subHeader: PropTypes.string,
+    onSectionElementClick: PropTypes.func,
+    error: PropTypes.string,
+    waitingForContent: PropTypes.bool,
+    initialState: PropTypes.bool,
+    viewMode: PropTypes.number,
+};
+
+MainContent.prototype.contextTypes = {
+    muiTheme: PropTypes.object,
+};
 
 export default MainContent;

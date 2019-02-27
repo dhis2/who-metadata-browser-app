@@ -7,16 +7,18 @@ This software is distributed under the terms of the GNU General Public License v
 /* eslint-disable react/prefer-stateless-function */
 
 import React from 'react';
+import PropTypes from 'proptypes';
 import SectionBsGrid from '../SectionBsGrid/SectionBsGrid.component';
 import SectionTable from '../SectionTable/SectionTable.component';
 import SectionWrapper from './SectionWrapper.component';
 import sectionTypes from './SectionTypes';
 
-export default React.createClass({
-    propTypes: {
-        sectionsData: React.PropTypes.array.isRequired,
-        onElementClick: React.PropTypes.func,
-    },
+export default class extends React.Component {
+    static propTypes = {
+        sectionsData: PropTypes.array.isRequired,
+        onElementClick: PropTypes.func,
+    }
+
     render() {
         const sections = this.props.sectionsData.map((sd, index) => {
             let section;
@@ -38,5 +40,5 @@ export default React.createClass({
                 {sections}
             </div>
         );
-    },
-});
+    }
+}

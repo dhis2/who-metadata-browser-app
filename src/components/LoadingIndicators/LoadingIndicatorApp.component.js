@@ -6,7 +6,8 @@ This software is distributed under the terms of the GNU General Public License v
 
 /* eslint-disable class-methods-use-this */
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'proptypes';
 
 // components
 import CircularProgress from 'material-ui/CircularProgress';
@@ -39,11 +40,10 @@ class LoadingIndicatorApp extends Component {
 
 LoadingIndicatorApp.propTypes = {
     style: PropTypes.object,
-
 };
 
 LoadingIndicatorApp.childContextTypes = {
-    muiTheme: React.PropTypes.object,
+    muiTheme: PropTypes.object,
 };
 
 LoadingIndicatorApp.defaultProps = {
