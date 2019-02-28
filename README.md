@@ -1,4 +1,7 @@
 ## WHO Metadata App By Joakim Melseth (Abaris) ##
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/dhis2/data-dictionary-app-who.svg)](https://greenkeeper.io/)
+
 (starting point: dhis2 app-skeleton https://github.com/dhis2/app-skeleton)
 
 ## Quickstart ##
