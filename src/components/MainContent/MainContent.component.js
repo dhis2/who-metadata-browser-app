@@ -12,13 +12,12 @@ import InitialMainContent from './InitialMainContent.component';
 
 class MainContent extends React.Component {
 
-    getDefaultProps() {
-        return {
-            style: {},
-            sectionsData: [],
-            waitingForContent: false,
-        };
+    static defaultProps = {
+        style: {},
+        sectionsData: [],
+        waitingForContent: false,
     }
+
     render() {
         let contents;
 
@@ -56,7 +55,7 @@ class MainContent extends React.Component {
     }
 }
 
-MainContent.prototype.propTypes = {
+MainContent.propTypes = {
     style: PropTypes.object,
     sectionsData: PropTypes.array,
     header: PropTypes.string,
@@ -68,7 +67,7 @@ MainContent.prototype.propTypes = {
     viewMode: PropTypes.number,
 };
 
-MainContent.prototype.contextTypes = {
+MainContent.contextTypes = {
     muiTheme: PropTypes.object,
 };
 

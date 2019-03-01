@@ -7,7 +7,7 @@ This software is distributed under the terms of the GNU General Public License v
 import PropTypes from 'proptypes';
 import AppTheme from './theme';
 
-export default {
+/*export default {
     childContextTypes: {
         muiTheme: PropTypes.object,
     },
@@ -17,4 +17,4 @@ export default {
             muiTheme: AppTheme,
         };
     },
-};
+};*/

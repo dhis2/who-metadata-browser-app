@@ -17,16 +17,30 @@ import isDefined from 'd2-utilizr/lib/isDefined';
 
 class MenuContainer extends React.Component {
 
+    static propTypes = {
+        open: PropTypes.bool,
+        expanded: PropTypes.bool,
+        width: PropTypes.number,
+        expandedWidth: PropTypes.number,
+        onHide: PropTypes.func.isRequired,
+        onExpandedChange: PropTypes.func,
+        onHome: PropTypes.func,
+        openRight: PropTypes.bool,
+        docked: PropTypes.bool,
+        children: PropTypes.node,
+    }
+    
+    static contextTypes = {
+        muiTheme: PropTypes.object,
+    }
 
-    getDefaultProps() {
-        return {
-            open: true,
-            expanded: false,
-            width: 256,
-            openRight: false,
-            docked: true,
-            expandedWidth: 356,
-        };
+    static defaultProps = {
+        open: true,
+        expanded: false,
+        width: 256,
+        openRight: false,
+        docked: true,
+        expandedWidth: 356,
     }
 
     getHeader = () => {
@@ -127,21 +141,6 @@ class MenuContainer extends React.Component {
     }
 }
 
-MenuContainer.prototype.propTypes = {
-    open: PropTypes.bool,
-    expanded: PropTypes.bool,
-    width: PropTypes.number,
-    expandedWidth: PropTypes.number,
-    onHide: PropTypes.func.isRequired,
-    onExpandedChange: PropTypes.func,
-    onHome: PropTypes.func,
-    openRight: PropTypes.bool,
-    docked: PropTypes.bool,
-    children: PropTypes.node,
-}
 
-MenuContainer.prototype.contextTypes = {
-    muiTheme: PropTypes.object,
-}
 
 export default MenuContainer;

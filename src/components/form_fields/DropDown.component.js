@@ -15,12 +15,35 @@ import { isString } from 'd2-utilizr';
 
 class DropDown extends React.Component {
 
+    static propTypes = {
+        value: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+        ]),
+        onChange: PropTypes.func,
+        menuItems: PropTypes.arrayOf(PropTypes.shape({
+            id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+            text: PropTypes.string,
+        })),
+        includeEmpty: PropTypes.bool,
+        emptyLabel: PropTypes.string,
+        noOptionsLabel: PropTypes.string,
+        label: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.shape({
+                empty: PropTypes.string,
+                filled: PropTypes.string,
+                noContent: PropTypes.string,
+            }),
+        ]).isRequired,
+        fullWidth: PropTypes.bool,
+        width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    }
+    
 
-    getDefaultProps() {
-        return {
-            includeEmpty: false,
-            emptyLabel: 'Not specified',
-        };
+    static defaultProps = {
+        includeEmpty: false,
+        emptyLabel: 'Not specified',
     }
 
     handleChange = (event, index, value) => {
@@ -64,29 +87,5 @@ class DropDown extends React.Component {
     }
 }
 
-DropDown.prototype.propTypes = {
-    value: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-    ]),
-    onChange: PropTypes.func,
-    menuItems: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-        text: PropTypes.string,
-    })),
-    includeEmpty: PropTypes.bool,
-    emptyLabel: PropTypes.string,
-    noOptionsLabel: PropTypes.string,
-    label: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.shape({
-            empty: PropTypes.string,
-            filled: PropTypes.string,
-            noContent: PropTypes.string,
-        }),
-    ]).isRequired,
-    fullWidth: PropTypes.bool,
-    width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-}
 
 export default DropDown

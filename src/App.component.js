@@ -36,8 +36,10 @@ import dispatcherActions from './actions/DispatcherActions';
 // utils
 import dataBuilders from './helpers/dataBuilders';
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 // theme
-import MuiThemeMixin from './styles/mui-theme.mixin';
+//import MuiThemeMixin from './styles/mui-theme.mixin';
 import AppTheme from './styles/theme';
 
 // constants
@@ -61,23 +63,32 @@ const modes = viewModes;
 
 class App extends React.Component {
 
-
-    getDefaultProps() {
-        return {
-            WHOData: {
-                categoriesMenu: [],
-                referencesMenu: {},
-            },
-        };
+    static propTypes = {
+        d2: PropTypes.object,
+        WHOData: PropTypes.object,
     }
 
-    getInitialState() {
+    static defaultProps = {
+        WHOData: {
+            categoriesMenu: [],
+            referencesMenu: {},
+        },
+    }
+
+    static childContextTypes = {
+        d2: PropTypes.object,
+        muiTheme: PropTypes.object,
+    }
+
+    constructor(props) {
+        super(props)
+
         const width = this.getMyWidth();
         const viewMode = this.getViewMode(width);
         const leftMenuOpen = viewMode > modes.phone;
         const rightMenuOpen = viewMode === modes.desktop;
 
-        return {
+        this.state = {
             typeMenuValue: 'null',
             groupMenuValue: 'null',
             leftMenuOpen,
@@ -90,6 +101,9 @@ class App extends React.Component {
             initialRun: true,
         };
     }
+
+
+
 
     getChildContext() {
         return {
@@ -526,92 +540,84 @@ class App extends React.Component {
 
 
         return (
-            <div>
-                <HeaderBar />
-                {mobileMenu}
+            <MuiThemeProvider muiTheme={AppTheme}>
+                <div>
+                    <HeaderBar />
+                    {mobileMenu}
 
-                <div className="content-body">
-                    <MenuContainer
-                        open={this.state.leftMenuOpen}
-                        expanded={this.state.leftMenuExpanded}
-                        width={LeftMenuWidthOnOpen}
-                        expandedWidth={LeftMenuWidthExpanded}
-                        onHide={this.toggleLeftMenu}
-                        onExpandedChange={this.toggleLeftMenuExpanded}
-                        onHome={userActions.reset}
-                        docked={viewMode !== modes.phone}
-                    >
+                    <div className="content-body">
+                        <MenuContainer
+                            open={this.state.leftMenuOpen}
+                            expanded={this.state.leftMenuExpanded}
+                            width={LeftMenuWidthOnOpen}
+                            expandedWidth={LeftMenuWidthExpanded}
+                            onHide={this.toggleLeftMenu}
+                            onExpandedChange={this.toggleLeftMenuExpanded}
+                            onHome={userActions.reset}
+                            docked={viewMode !== modes.phone}
+                        >
 
-                        <TbcMenuContent
-                            typeMenuItems={menuStore.state.types}
-                            groupMenuItems={groupMenuItems}
-                            itemMenuItems={menuItems}
-                            searchItemMenuItems={menuStore.state.searchData}
-                            itemsFilter={this.state.itemsFilter}
-                            typeValue={this.state.typeMenuValue}
-                            groupValue={this.state.groupMenuValue}
-                            itemValue={this.state.itemMenuValue}
-                            searchItemValue={this.state.searchItemMenuValue}
-                            onTypeUpdate={userActions.setType}
-                            onGroupUpdate={userActions.setGroup}
-                            onItemUpdate={this.handleItemUpdate}
-                            onSearchItemUpdate={this.handleSearchItemUpdate}
-                            typeMenuLabel={{ empty: 'Browse By Type', filled: 'Type' }}
-                            groupMenuLabel={{ empty: 'Select Group', filled: 'Group' }}
-                            onFilterListValues={userActions.filterItems}
-                            searchValue={this.state.searchValue}
-                            onSearch={userActions.search}
-                            showSearch={this.showSearch(this.state.typeMenuValue)}
-                            groupMenuIsVisible={groupMenuVisible}
-                            itemMenuIsVisible={itemsMenuVisible}
-                            appHeight={this.state.height}
-                            menuIsExtended={this.state.leftMenuOpen && this.state.leftMenuExpanded}
+                            <TbcMenuContent
+                                typeMenuItems={menuStore.state.types}
+                                groupMenuItems={groupMenuItems}
+                                itemMenuItems={menuItems}
+                                searchItemMenuItems={menuStore.state.searchData}
+                                itemsFilter={this.state.itemsFilter}
+                                typeValue={this.state.typeMenuValue}
+                                groupValue={this.state.groupMenuValue}
+                                itemValue={this.state.itemMenuValue}
+                                searchItemValue={this.state.searchItemMenuValue}
+                                onTypeUpdate={userActions.setType}
+                                onGroupUpdate={userActions.setGroup}
+                                onItemUpdate={this.handleItemUpdate}
+                                onSearchItemUpdate={this.handleSearchItemUpdate}
+                                typeMenuLabel={{ empty: 'Browse By Type', filled: 'Type' }}
+                                groupMenuLabel={{ empty: 'Select Group', filled: 'Group' }}
+                                onFilterListValues={userActions.filterItems}
+                                searchValue={this.state.searchValue}
+                                onSearch={userActions.search}
+                                showSearch={this.showSearch(this.state.typeMenuValue)}
+                                groupMenuIsVisible={groupMenuVisible}
+                                itemMenuIsVisible={itemsMenuVisible}
+                                appHeight={this.state.height}
+                                menuIsExtended={this.state.leftMenuOpen && this.state.leftMenuExpanded}
+                            />
+
+                        </MenuContainer>
+
+                        {LeftMenuShowButton}
+
+                        <MainContent
+                            style={mainContentStyle}
+                            sectionsData={this.state.mainContent.sections}
+                            header={this.state.mainContent.header}
+                            subHeader={this.state.mainContent.subHeader}
+                            onSectionElementClick={this.handleSectionElementClick}
+                            error={this.state.mainContent.error}
+                            initialState={this.state.initialRun}
+                            viewMode={viewMode}
+                            waitingForContent={this.state.waitingForContent}
                         />
 
-                    </MenuContainer>
+                        <MenuContainer open={this.state.rightMenuOpen} expanded={this.state.rightMenuExpanded} width={RigthMenuWidthOnOpen} expandedWidth={RightMenuWidthExpanded} onHide={this.toggleRightMenu} onExpandedChange={this.toggleRightMenuExpanded} openRight={viewMode !== modes.phone} docked={viewMode !== modes.phone} showHomeButton={false}>
+                            <TbcWHOMenuContent
+                                categoriesMenu={this.props.WHOData.categoriesMenu}
+                                referencesMenu={this.props.WHOData.referencesMenu}
+                                references={this.props.WHOData.references}
+                                aboutWHOreferences={this.props.WHOData.aboutWHOreferences}
+                                isMobileView={viewMode === modes.phone}
+                                menuIsExtended={this.state.rightMenuOpen && this.state.rightMenuExpanded}
+                                appHeight={this.state.height}
+                            />
+                        </MenuContainer>
 
-                    {LeftMenuShowButton}
-
-                    <MainContent
-                        style={mainContentStyle}
-                        sectionsData={this.state.mainContent.sections}
-                        header={this.state.mainContent.header}
-                        subHeader={this.state.mainContent.subHeader}
-                        onSectionElementClick={this.handleSectionElementClick}
-                        error={this.state.mainContent.error}
-                        initialState={this.state.initialRun}
-                        viewMode={viewMode}
-                        waitingForContent={this.state.waitingForContent}
-                    />
-
-                    <MenuContainer open={this.state.rightMenuOpen} expanded={this.state.rightMenuExpanded} width={RigthMenuWidthOnOpen} expandedWidth={RightMenuWidthExpanded} onHide={this.toggleRightMenu} onExpandedChange={this.toggleRightMenuExpanded} openRight={viewMode !== modes.phone} docked={viewMode !== modes.phone} showHomeButton={false}>
-                        <TbcWHOMenuContent
-                            categoriesMenu={this.props.WHOData.categoriesMenu}
-                            referencesMenu={this.props.WHOData.referencesMenu}
-                            references={this.props.WHOData.references}
-                            aboutWHOreferences={this.props.WHOData.aboutWHOreferences}
-                            isMobileView={viewMode === modes.phone}
-                            menuIsExtended={this.state.rightMenuOpen && this.state.rightMenuExpanded}
-                            appHeight={this.state.height}
-                        />
-                    </MenuContainer>
-
-                    {RightMenuShowButton}
+                        {RightMenuShowButton}
+                    </div>
                 </div>
-            </div>
+            </MuiThemeProvider>
         );
     }
 }
 
-App.prototype.propTypes = {
-    d2: PropTypes.object,
-    WHOData: PropTypes.object,
-}
-
-App.prototype.childContextTypes = {
-    d2: PropTypes.object,
-}
-
-App.prototype.mixins = [MuiThemeMixin]
 
 export default App;

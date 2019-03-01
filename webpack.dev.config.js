@@ -84,7 +84,7 @@ webpackConfig.devServer = {
         '/dhis-web-commons/**': {
             target: dhisConfig.baseUrl,
             bypass: log,
-            changeOrigin: false
+            changeOrigin: true
         }
     }
 };

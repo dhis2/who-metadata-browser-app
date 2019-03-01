@@ -20,8 +20,8 @@
   "license": "BSD-3-Clause",
   "dependencies": {
     "axios": "^0.14.0",
-    "d2": "^29",
-    "d2-ui": "^29",
+    "d2": "30.0.4",
+    "d2-ui": "29.0.29",
     "d2-utilizr": "^0.2.15",
     "jquery": "^2.2.1",
     "konva": "^3.0.0",
