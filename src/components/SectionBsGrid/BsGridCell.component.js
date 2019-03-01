@@ -26,6 +26,8 @@ export default class extends React.Component {
         muiTheme: PropTypes.object,
     }
 
+    displayName = 'BsGridCell'
+
     render() {
         let { isLabel, value, ...config } = this.props;
 
@@ -44,6 +46,7 @@ export default class extends React.Component {
         if (!isDefined(value) || value === '') {
             value = '\u00a0';
         }
+
 
         return (<Col {...config}>{value}</Col>);
     }

@@ -42,14 +42,9 @@ class MainContent extends React.Component {
         return (
             <div style={this.props.style}>
                 {contents}
-                {
-          (() => {
-              if (this.props.error) {
-                  return (<div>{this.props.error}</div>);
-              }
-              return null;
-          })()
-        }
+                {this.props.error &&
+                  <div>{this.props.error}</div>
+                }
             </div>
         );
     }

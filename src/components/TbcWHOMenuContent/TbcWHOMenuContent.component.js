@@ -27,10 +27,6 @@ import DropDown from '../form_fields/DropDown.component';
 class TbcWHOMenuContent extends Component {
     constructor(props) {
         super(props);
-        this.handleCategorySelect = this.handleCategorySelect.bind(this);
-        this.handleReferenceSelect = this.handleReferenceSelect.bind(this);
-        this.closeReferenceDialog = this.closeReferenceDialog.bind(this);
-        this.showReferenceDialog = this.showReferenceDialog.bind(this);
 
         this.state = {
             refDialogOpen: false,
@@ -65,19 +61,19 @@ class TbcWHOMenuContent extends Component {
         );
     }
 
-    handleReferenceSelect(value) {
+    handleReferenceSelect = (value) => {
         userActions.setWHOReference({ categoryId: this.state.categoryId, referenceId: value });
     }
 
-    showReferenceDialog() {
+    showReferenceDialog = () => {
         this.setState({ refDialogOpen: true });
     }
 
-    closeReferenceDialog() {
+    closeReferenceDialog = () => {
         this.setState({ refDialogOpen: false });
     }
 
-    handleCategorySelect(value) {
+    handleCategorySelect = (value) => {
         userActions.setWHOCategory(value);
     }
 

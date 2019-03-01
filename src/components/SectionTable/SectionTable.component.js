@@ -16,7 +16,7 @@ import LoadingIndicator from '../LoadingIndicators/LoadingIndicator.component';
 
 
 export default class extends React.Component {
-
+    
     static propTypes = {
         data: PropTypes.object.isRequired,
         onCellClick: PropTypes.func,
@@ -24,6 +24,8 @@ export default class extends React.Component {
     static contextTypes = {
         muiTheme: PropTypes.object,
     }
+
+    displayName = 'SectionTable'
 
     getTableHeader = (muiTheme) => {
         const headerColumns = this.props.data.header.map((h, index) => {
@@ -49,18 +51,15 @@ export default class extends React.Component {
             tableRows = this.props.data.body.map((r, rowIndex) => {
                 const rowCols = r.map((c, colIndex) => {
                     const { value, onClickData, ...config } = c;
+
+                    const contentsOrLoading = value === sectionTableConstants.waiting 
+                                                ? <LoadingIndicator size={20} />
+                                                : this.getCellContents(value, onClickData);
+                    
+
                     return (
                         <TableRowColumn key={colIndex} {...config} style={muiTheme.tableCell}>
-                            {
-                                (() => {
-                                    if (value === sectionTableConstants.waiting) {
-                                        return (
-                                            <LoadingIndicator size={20} />
-                                        );
-                                    }
-                                    return this.getCellContents(value, onClickData);
-                                })()
-                            }
+                            { contentsOrLoading }
                         </TableRowColumn>
                     );
                 });
@@ -86,22 +85,17 @@ export default class extends React.Component {
     render() {
         const muiTheme = (this.context && this.context.muiTheme) || {};
 
+        const loading = (this.props.data.waitingForContent === true) ? (<LoadingIndicator size={100} center top={5} />) : null;
+        
         return (
             <div>
                 <Table selectable={false} style={muiTheme.table} bodyStyle={muiTheme.tableDiv}>
-                    <TableBody adjustForCheckbox={false} displayRowCheckbox={false}>
+                    <TableBody displayRowCheckbox={false}>
                         {this.getTableHeader(muiTheme)}
                         {this.getTableRows(muiTheme)}
                     </TableBody>
                 </Table>
-                {
-                    (() => {
-                        if (this.props.data.waitingForContent === true) {
-                            return (<LoadingIndicator size={100} center top={5} />);
-                        }
-                        return null;
-                    })()
-                }
+                {loading}
             </div>
         );
     }

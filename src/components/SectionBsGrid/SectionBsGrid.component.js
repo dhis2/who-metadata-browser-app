@@ -8,7 +8,7 @@ This software is distributed under the terms of the GNU General Public License v
 
 import React from 'react';
 import PropTypes from 'proptypes';
-import { Row, Grid, Col } from 'react-bootstrap';
+import { Row, Container, Col } from 'react-bootstrap';
 import isDefined from 'd2-utilizr/lib/isDefined';
 import BsGridCell from './BsGridCell.component';
 
@@ -20,17 +20,19 @@ export default class extends React.Component {
         muiTheme: PropTypes.object,
     }
 
+    displayName = 'SectionBsGrid'
+
     render() {
-        let header = '';
+        let header = null;
         if (isDefined(this.props.data.header)) {
             header = (<Row><Col sm={12} style={this.context.muiTheme.sectionHeader}>{this.props.data.header}</Col></Row>);
         }
 
-        const rows = this.props.data.body.map((r, rowIndex) => {
+        const rows = null; /*this.props.data.body.map((r, rowIndex) => {
             const cols = r.map((c, colIndex) => (<BsGridCell key={colIndex} {...c} />));
             return (<Row key={rowIndex} className="flex-row">{cols}</Row>);
-        });
+        });*/
 
-        return (<Grid fluid>{header}{rows}</Grid>);
+        return (<Container fluid>{header}{rows}</Container>);
     }
 }

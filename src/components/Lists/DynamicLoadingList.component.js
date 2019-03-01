@@ -16,7 +16,7 @@ import { isDefined, isArray } from 'd2-utilizr';
 import rx from 'rxjs/Rx';
 
 // material-ui
-import { List, ListItem, MakeSelectable } from 'material-ui/List';
+import { List, ListItem, makeSelectable } from 'material-ui/List';
 
 import SubHeader from '../SubHeader/SubHeader.component';
 import { multiArrayValueSeperator } from './DynamicLoadingList.constants';
@@ -25,14 +25,6 @@ class DynamicLoadingList extends Component {
 
     constructor(props) {
         super(props);
-        this.handleScroll = this.handleScroll.bind(this);
-        this.loadMoreItems = this.loadMoreItems.bind(this);
-        this.loadItems = this.loadItems.bind(this);
-        this.onListScroll = this.onListScroll.bind(this);
-        this.handleSelectionUpdate = this.handleSelectionUpdate.bind(this);
-        this.loadItemsFromSingleArray = this.loadItemsFromSingleArray.bind(this);
-        this.loadItemsFromMultiArray = this.loadItemsFromMultiArray.bind(this);
-
 
         this.scrollStream = new rx.Subject();
         this.scrollSubscription = this.scrollStream.debounceTime(100).subscribe((target) => {
@@ -69,7 +61,7 @@ class DynamicLoadingList extends Component {
     }
 
 
-    loadNewItems(nextProps) {
+    loadNewItems = (nextProps) => {
         this.logIt('received new props');
         this.loadItems(nextProps.loadCntOnInit, this.getDefaultState(this.isMultiArray(nextProps.items)), nextProps.items);
 
@@ -97,7 +89,7 @@ class DynamicLoadingList extends Component {
         return !!(items && items[0] && items[0].subItems && isArray(items[0].subItems));
     }
 
-    loadItems(toLoadCnt, currentState, allItems) {
+    loadItems = (toLoadCnt, currentState, allItems) => {
         if (!currentState.loadDone) {
             const loadMethod = (currentState.loadedSubCnt < 0 ? this.loadItemsFromSingleArray : this.loadItemsFromMultiArray);
             const newState = Object.assign({}, currentState, loadMethod(toLoadCnt, currentState, allItems));
@@ -106,7 +98,7 @@ class DynamicLoadingList extends Component {
         }
     }
 
-    loadItemsFromSingleArray(toLoadCnt, currentState, allItems) {
+    loadItemsFromSingleArray = (toLoadCnt, currentState, allItems) => {
         const newItems = this.getItemsFromArray(toLoadCnt, currentState.loadedCnt, allItems);
 
         const loadedItems = currentState.loadedItems.concat(newItems);
@@ -130,7 +122,7 @@ class DynamicLoadingList extends Component {
         return newItems;
     }
 
-    loadItemsFromMultiArray(toLoadCnt, currentState, allItems) {
+    loadItemsFromMultiArray = (toLoadCnt, currentState, allItems) => {
         let currentlyLoadedCnt = 0;
         let loadedInSubCnt = currentState.loadedCnt;
         const loadedItems = currentState.loadedItems;
@@ -162,11 +154,11 @@ class DynamicLoadingList extends Component {
         return { loadedCnt: loadedInSubCnt, loadedSubCnt: currentSub - 1, loadDone: isDone, loadedItems };
     }
 
-    loadMoreItems() {
+    loadMoreItems = () => {
         this.loadItems(this.props.loadCntOnScroll, this.state, this.props.items);
     }
 
-    handleScroll(target) {
+    handleScroll = (target) => {
         if (!target) {
             this.logIt('scroll event occured, but could not get target object', 'error');
             return;
@@ -182,7 +174,7 @@ class DynamicLoadingList extends Component {
         }
     }
 
-    onListScroll(event) {
+    onListScroll = (event) => {
         this.scrollStream.next(event.target);
     }
 
@@ -195,7 +187,7 @@ class DynamicLoadingList extends Component {
         }
     }
 
-    getContainerStyle() {
+    getContainerStyle = () => {
         const containerStyle = {
             marginTop: 10,
             overflow: 'auto',
@@ -213,7 +205,7 @@ class DynamicLoadingList extends Component {
         return containerStyle;
     }
 
-    getItemStyle() {
+    getItemStyle = () => {
         const itemStyle = {
             whiteSpace: 'nowrap',
             fontSize: 14,
@@ -230,7 +222,7 @@ class DynamicLoadingList extends Component {
         return itemStyle;
     }
 
-    getTextContainerStyle() {
+    getTextContainerStyle = () => {
         const textContainerStyle = {
         };
 
@@ -241,14 +233,14 @@ class DynamicLoadingList extends Component {
         return textContainerStyle;
     }
 
-    handleSelectionUpdate(e, itemId) {
+    handleSelectionUpdate = (e, itemId) => {
         if (itemId !== this.props.value) {
             this.props.onValueChange(itemId);
         }
     }
 
     render() {
-        const SelectableList = MakeSelectable(List);
+        const SelectableList = makeSelectable(List);
         const value = this.props.value !== 'null' ? this.props.value : null;
         let items = [];
         if (this.state.loadedSubCnt >= 0) {
@@ -263,19 +255,14 @@ class DynamicLoadingList extends Component {
             items = this.state.loadedItems.map((item, index) => (<ListItem innerDivStyle={this.getTextContainerStyle()} value={item.id} primaryText={item.text} style={this.getItemStyle()} key={index} />));
         }
 
+        const itemsMessage = (items.length === 0) ? 'no items found' : null;
+
         return (
             <div onScroll={this.onListScroll} style={this.getContainerStyle()}>
                 <SelectableList value={value} onChange={this.handleSelectionUpdate}>
                     {items}
                 </SelectableList>
-                {
-                    (() => {
-                        if (items.length === 0) {
-                            return 'no items found';
-                        }
-                        return null;
-                    })()
-                }
+                {itemsMessage}
             </div>
         );
     }

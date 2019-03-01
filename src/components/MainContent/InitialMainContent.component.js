@@ -27,7 +27,9 @@ const InitialMainContent = (props, context) => {
                         <Layer>
                             <Label x={480} y={300}>
                                 <Tag fill={context.muiTheme.labelShapes.fill} lineJoin="round" pointerDirection="right" pointerWidth={100} pointerHeight={135} shadowColor={context.muiTheme.labelShapes.borderColor} shadowBlur={10} shadowOffset={10} shadowOpacity={0.5} />
-                                <Text text={textBrowseRight} fontSize={20} fill={context.muiTheme.labelShapes.textColor} padding={25} />
+                                { false && // disabled for now
+                                    <Text text={textBrowseRight} fontSize={20} fill={context.muiTheme.labelShapes.textColor} padding={25} />
+                                }
                             </Label>
                         </Layer>
                     </Stage>
@@ -46,7 +48,9 @@ const InitialMainContent = (props, context) => {
                             <Layer>
                                 <Label x={0} y={30}>
                                     <Tag fill={context.muiTheme.labelShapes.fill} lineJoin="round" shadowColor={context.muiTheme.labelShapes.borderColor} shadowBlur={10} shadowOffset={10} shadowOpacity={0.5} />
-                                    <Text text={textBrowseRight} fontSize={20} fill={context.muiTheme.labelShapes.textColor} padding={25} />
+                                    { false && // disabled for now
+                                        <Text text={textBrowseRight} fontSize={20} fill={context.muiTheme.labelShapes.textColor} padding={25} /> 
+                                    }
                                 </Label>
                                 <Arrow x={320} y={50} points={[0, 0, 70, -20]} pointerLength={15} pointerWidth={15} fill={context.muiTheme.labelShapes.fill} stroke={context.muiTheme.labelShapes.fill} strokeWidth={3} />
                             </Layer>

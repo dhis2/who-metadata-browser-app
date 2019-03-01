@@ -15,14 +15,13 @@ import TextField from 'material-ui/TextField';
 class SearchableList extends Component {
     constructor(props) {
         super(props);
-        this.onSearch = this.onSearch.bind(this);
     }
 
-    handleSearch(searchValue) {
+    handleSearch = (searchValue) => {
         this.props.onSearch(searchValue);
     }
 
-    onSearch(event) {
+    onSearch = (event) => {
         const searchValue = event.target.value;
         this.handleSearch(searchValue);
     }
@@ -47,7 +46,7 @@ class SearchableList extends Component {
         return !!(items && items[0] && items[0].subItems && isArray(items[0].subItems));
     }
 
-    getListElement() {
+    getListElement = () => {
         if (this.props.waitForSearchCharCnt) {
             if (!this.props.searchValue || this.props.searchValue.length < this.props.waitForSearchCharCnt) {
                 return null;
@@ -66,7 +65,7 @@ class SearchableList extends Component {
         return list;
     }
 
-    getContainerStyle() {
+    getContainerStyle = () => {
         const containerStyle = {
             padding: 5,
             borderStyle: 'solid',
