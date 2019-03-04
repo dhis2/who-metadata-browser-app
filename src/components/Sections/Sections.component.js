@@ -22,7 +22,7 @@ export default class extends React.Component {
     render() {
         const sections = this.props.sectionsData.map((sd, index) => {
             let section = null;
-            console.log(sd.type)
+            
             switch (sd.type) {
             case sectionTypes.bsGrid:
                 section = (<SectionBsGrid data={sd.data} />);
