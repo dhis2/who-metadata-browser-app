@@ -13,11 +13,11 @@ import PropTypes from 'proptypes';
 import { findDOMNode } from 'react-dom';
 import log from 'loglevel';
 import { isDefined, isArray } from 'd2-utilizr';
-//import rx from 'rxjs/Rx';
-import { Subject } from 'rxjs/Subject';
+
+import { Subject } from 'rxjs';
 
 // material-ui
-import { List, ListItem, makeSelectable } from 'material-ui/List';
+import { List, ListItem, makeSelectable } from 'material-ui';
 
 import SubHeader from '../SubHeader/SubHeader.component';
 import { multiArrayValueSeperator } from './DynamicLoadingList.constants';

@@ -12,7 +12,7 @@ import { isDefined, isArray, isObject } from 'd2-utilizr';
 import log from 'loglevel';
 
 // rxJs
-import { Observable } from 'rxjs/Observable';
+import { Observable, fromEvent } from 'rxjs';
 import userActions from './actions/UserActions';
 import dispatcherActions from './actions/DispatcherActions';
 import menuSelectionStore from './stores/menuSelectionsStore';

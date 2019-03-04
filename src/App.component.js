@@ -32,12 +32,12 @@ import menuSelectionStore from './stores/menuSelectionsStore';
 import selectedStore from './stores/selectedStore';
 import userActions from './actions/UserActions';
 import dispatcherActions from './actions/DispatcherActions';
-import { Subject } from 'rxjs/Subject'
+import { Subject } from 'rxjs'
 
 // utils
 import dataBuilders from './helpers/dataBuilders';
 
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { MuiThemeProvider } from 'material-ui/styles';
 
 // theme
 //import MuiThemeMixin from './styles/mui-theme.mixin';
