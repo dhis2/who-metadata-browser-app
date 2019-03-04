@@ -33,7 +33,7 @@ class LoadingIndicatorApp extends Component {
         };
 
         return (
-            <CircularProgress size={1.5} style={Object.assign({}, style, this.props.style)} />
+            <CircularProgress size={89} style={Object.assign({}, style, this.props.style)} />
         );
     }
 }
