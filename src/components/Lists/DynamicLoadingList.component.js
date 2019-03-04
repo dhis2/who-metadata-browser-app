@@ -13,7 +13,8 @@ import PropTypes from 'proptypes';
 import { findDOMNode } from 'react-dom';
 import log from 'loglevel';
 import { isDefined, isArray } from 'd2-utilizr';
-import rx from 'rxjs/Rx';
+//import rx from 'rxjs/Rx';
+import { Subject } from 'rxjs/Subject';
 
 // material-ui
 import { List, ListItem, makeSelectable } from 'material-ui/List';
@@ -26,7 +27,7 @@ class DynamicLoadingList extends Component {
     constructor(props) {
         super(props);
 
-        this.scrollStream = new rx.Subject();
+        this.scrollStream = new Subject();
         this.scrollSubscription = this.scrollStream.debounceTime(100).subscribe((target) => {
             this.logIt('handling scroll..');
             this.handleScroll(target);

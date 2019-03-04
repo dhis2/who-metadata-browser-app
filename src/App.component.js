@@ -6,7 +6,7 @@ This software is distributed under the terms of the GNU General Public License v
 
 import React from 'react';
 import PropTypes from 'proptypes';
-import rx from 'rxjs/Rx';
+//import rx from 'rxjs/Rx';
 import log from 'loglevel';
 import { isDefined } from 'd2-utilizr';
 
@@ -32,6 +32,7 @@ import menuSelectionStore from './stores/menuSelectionsStore';
 import selectedStore from './stores/selectedStore';
 import userActions from './actions/UserActions';
 import dispatcherActions from './actions/DispatcherActions';
+import { Subject } from 'rxjs/Subject'
 
 // utils
 import dataBuilders from './helpers/dataBuilders';
@@ -138,7 +139,7 @@ class App extends React.Component {
     }
 
     getResizeStreamObserver = () => {
-        const resizeStream = this.resizeStream = new rx.Subject();
+        const resizeStream = this.resizeStream = new Subject();
         return resizeStream.debounceTime(300)
         .subscribe(
             () => {

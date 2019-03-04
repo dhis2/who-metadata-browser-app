@@ -28,10 +28,10 @@ export default class extends React.Component {
             header = (<Row><Col sm={12} style={this.context.muiTheme.sectionHeader}>{this.props.data.header}</Col></Row>);
         }
 
-        const rows = null; /*this.props.data.body.map((r, rowIndex) => {
+        const rows = this.props.data.body.map((r, rowIndex) => {
             const cols = r.map((c, colIndex) => (<BsGridCell key={colIndex} {...c} />));
             return (<Row key={rowIndex} className="flex-row">{cols}</Row>);
-        });*/
+        });
 
         return (<Container fluid>{header}{rows}</Container>);
     }

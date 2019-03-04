@@ -88,7 +88,7 @@ function setTranslatorForDataBuilder(d2) {
 getManifest('./manifest.webapp')
     .then((manifest) => {
         const baseUrl = process.env.NODE_ENV === 'production' ? manifest.getBaseUrl() : dhisDevConfig.baseUrl;
-        config.baseUrl = `${baseUrl}/api`;
+        config.baseUrl = `${baseUrl}/api/29`;
         log.info(`Loading: ${manifest.name} v${manifest.version}`);
     })
     .then(getUserSettings)
