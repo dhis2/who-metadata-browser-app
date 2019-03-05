@@ -24,14 +24,14 @@ const InitialMainContent = (props, context) => {
                                 <Text text={textBrowseLeft} fontSize={20} fill={context.muiTheme.labelShapes.textColor} padding={25} />
                             </Label>
                         </Layer>
-                        <Layer>
-                            <Label x={480} y={300}>
-                                <Tag fill={context.muiTheme.labelShapes.fill} lineJoin="round" pointerDirection="right" pointerWidth={100} pointerHeight={135} shadowColor={context.muiTheme.labelShapes.borderColor} shadowBlur={10} shadowOffset={10} shadowOpacity={0.5} />
-                                { false && // disabled for now
+                        { false && // disabled for now
+                            <Layer>
+                                <Label x={480} y={300}>
+                                    <Tag fill={context.muiTheme.labelShapes.fill} lineJoin="round" pointerDirection="right" pointerWidth={100} pointerHeight={135} shadowColor={context.muiTheme.labelShapes.borderColor} shadowBlur={10} shadowOffset={10} shadowOpacity={0.5} />
                                     <Text text={textBrowseRight} fontSize={20} fill={context.muiTheme.labelShapes.textColor} padding={25} />
-                                }
-                            </Label>
-                        </Layer>
+                                </Label>
+                            </Layer>
+                        }
                     </Stage>
                 </div>
             );
@@ -43,19 +43,19 @@ const InitialMainContent = (props, context) => {
             return (
                 <div style={{}}>
 
-                    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                        <Stage width={400} height={150}>
-                            <Layer>
-                                <Label x={0} y={30}>
-                                    <Tag fill={context.muiTheme.labelShapes.fill} lineJoin="round" shadowColor={context.muiTheme.labelShapes.borderColor} shadowBlur={10} shadowOffset={10} shadowOpacity={0.5} />
-                                    { false && // disabled for now
+                    { false && // disabled for now
+                        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                            <Stage width={400} height={150}>
+                                <Layer>
+                                    <Label x={0} y={30}>
+                                        <Tag fill={context.muiTheme.labelShapes.fill} lineJoin="round" shadowColor={context.muiTheme.labelShapes.borderColor} shadowBlur={10} shadowOffset={10} shadowOpacity={0.5} />
                                         <Text text={textBrowseRight} fontSize={20} fill={context.muiTheme.labelShapes.textColor} padding={25} /> 
-                                    }
-                                </Label>
-                                <Arrow x={320} y={50} points={[0, 0, 70, -20]} pointerLength={15} pointerWidth={15} fill={context.muiTheme.labelShapes.fill} stroke={context.muiTheme.labelShapes.fill} strokeWidth={3} />
-                            </Layer>
-                        </Stage>
-                    </div>
+                                    </Label>
+                                    <Arrow x={320} y={50} points={[0, 0, 70, -20]} pointerLength={15} pointerWidth={15} fill={context.muiTheme.labelShapes.fill} stroke={context.muiTheme.labelShapes.fill} strokeWidth={3} />
+                                </Layer>
+                            </Stage>
+                        </div>
+                    }
 
                     <div style={{}}>
                         <Stage width={480} height={200}>

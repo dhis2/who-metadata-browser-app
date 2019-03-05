@@ -5,7 +5,7 @@
   "main": "src/index.html",
   "scripts": {
     "build": "webpack --config webpack.prod.config.js && mkdirp build/ && cp src/index.html build/ && cp src/manifest.webapp build/ && mkdirp build/img/icons/ && cp -r src/img/icons/ build/icons/ && cp -r src/i18n/ build/i18n/ && mkdirp build/data/ && cp src/data/whoData.json build/data/ && cp src/runtimeConfig.json build/",
-    "postbuild": "mkdirp buildzip/ && zip -r ./buildzip/WHOBrowser.zip ./build",
+    "postbuild": "mkdirp buildzip/ && cd build; zip -r ../buildzip/WHOBrowser.zip *",
     "test": "NODE_ENV=test mocha --reporter spec --compilers js:babel-core/register --require config/setup.js --recursive test",
     "test-watch": "NODE_ENV=test mocha --reporter spec --compilers js:babel-core/register --require config/setup.js --recursive test --watch",
     "lint": "eslint src --quiet",

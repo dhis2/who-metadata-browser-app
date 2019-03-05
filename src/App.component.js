@@ -524,7 +524,7 @@ class App extends React.Component {
             </div>
         ) : null);
 
-        const RightMenuShowButton = (viewMode !== modes.phone ?
+        const RightMenuShowButton = (false && /* disable for now */ viewMode !== modes.phone ?
         (
             <div style={{ position: 'fixed', overflow: 'hidden', top: 50, right: 0 }}>
                 <IconButton onClick={this.toggleRightMenu} >
