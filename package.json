@@ -1,6 +1,6 @@
 {
   "name": "app-who-metadata",
-  "version": "28.0.0",
+  "version": "29.0.0",
   "description": "WHO Metadata app",
   "main": "src/index.html",
   "scripts": {
