@@ -18,7 +18,7 @@ module.exports = {
     },
     module: {
         // Loaders that are used to load files
-        loaders: [
+        rules: [
             // Babel loader to transpile ES2015 to ES5 code
             {
                 test: /\.jsx?$/,
@@ -40,7 +40,6 @@ module.exports = {
             
             {
                 test: /\.(jpe|jpg|woff|woff2|eot|ttf|svg)(\?.*$|$)/,
-                include: [__dirname + '/node_modules/font-awesome/'],
                 loader: 'file-loader'
             },
             {

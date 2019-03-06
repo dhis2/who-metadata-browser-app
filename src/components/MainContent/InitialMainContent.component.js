@@ -5,6 +5,7 @@ This software is distributed under the terms of the GNU General Public License v
 */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Layer, Label, Text, Tag, Stage, Arrow } from 'react-konva';
 import { viewModes } from '../../constants/configConstants';
 
@@ -23,12 +24,14 @@ const InitialMainContent = (props, context) => {
                                 <Text text={textBrowseLeft} fontSize={20} fill={context.muiTheme.labelShapes.textColor} padding={25} />
                             </Label>
                         </Layer>
-                        <Layer>
-                            <Label x={480} y={300}>
-                                <Tag fill={context.muiTheme.labelShapes.fill} lineJoin="round" pointerDirection="right" pointerWidth={100} pointerHeight={135} shadowColor={context.muiTheme.labelShapes.borderColor} shadowBlur={10} shadowOffset={10} shadowOpacity={0.5} />
-                                <Text text={textBrowseRight} fontSize={20} fill={context.muiTheme.labelShapes.textColor} padding={25} />
-                            </Label>
-                        </Layer>
+                        { false && // disabled for now
+                            <Layer>
+                                <Label x={480} y={300}>
+                                    <Tag fill={context.muiTheme.labelShapes.fill} lineJoin="round" pointerDirection="right" pointerWidth={100} pointerHeight={135} shadowColor={context.muiTheme.labelShapes.borderColor} shadowBlur={10} shadowOffset={10} shadowOpacity={0.5} />
+                                    <Text text={textBrowseRight} fontSize={20} fill={context.muiTheme.labelShapes.textColor} padding={25} />
+                                </Label>
+                            </Layer>
+                        }
                     </Stage>
                 </div>
             );
@@ -40,17 +43,19 @@ const InitialMainContent = (props, context) => {
             return (
                 <div style={{}}>
 
-                    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                        <Stage width={400} height={150}>
-                            <Layer>
-                                <Label x={0} y={30}>
-                                    <Tag fill={context.muiTheme.labelShapes.fill} lineJoin="round" shadowColor={context.muiTheme.labelShapes.borderColor} shadowBlur={10} shadowOffset={10} shadowOpacity={0.5} />
-                                    <Text text={textBrowseRight} fontSize={20} fill={context.muiTheme.labelShapes.textColor} padding={25} />
-                                </Label>
-                                <Arrow x={320} y={50} points={[0, 0, 70, -20]} pointerLength={15} pointerWidth={15} fill={context.muiTheme.labelShapes.fill} stroke={context.muiTheme.labelShapes.fill} strokeWidth={3} />
-                            </Layer>
-                        </Stage>
-                    </div>
+                    { false && // disabled for now
+                        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                            <Stage width={400} height={150}>
+                                <Layer>
+                                    <Label x={0} y={30}>
+                                        <Tag fill={context.muiTheme.labelShapes.fill} lineJoin="round" shadowColor={context.muiTheme.labelShapes.borderColor} shadowBlur={10} shadowOffset={10} shadowOpacity={0.5} />
+                                        <Text text={textBrowseRight} fontSize={20} fill={context.muiTheme.labelShapes.textColor} padding={25} /> 
+                                    </Label>
+                                    <Arrow x={320} y={50} points={[0, 0, 70, -20]} pointerLength={15} pointerWidth={15} fill={context.muiTheme.labelShapes.fill} stroke={context.muiTheme.labelShapes.fill} strokeWidth={3} />
+                                </Layer>
+                            </Stage>
+                        </div>
+                    }
 
                     <div style={{}}>
                         <Stage width={480} height={200}>
@@ -92,10 +97,10 @@ const InitialMainContent = (props, context) => {
 };
 
 InitialMainContent.propTypes = {
-    viewMode: React.PropTypes.number,
+    viewMode: PropTypes.number,
 };
 InitialMainContent.contextTypes = {
-    muiTheme: React.PropTypes.object,
+    muiTheme: PropTypes.object,
 };
 
 export default InitialMainContent;

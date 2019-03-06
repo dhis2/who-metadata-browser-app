@@ -7,70 +7,71 @@ This software is distributed under the terms of the GNU General Public License v
 /* eslint-disable no-nested-ternary */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import DropDown from '../form_fields/DropDown.component';
 import DynamicList from '../Lists/DynamicLoadingList.component';
 import SearchableList from '../Lists/SearchableList.component';
 
-export default React.createClass({
+export default class extends React.Component {
 
-    propTypes: {
-        typeMenuItems: React.PropTypes.arrayOf(React.PropTypes.shape({
-            id: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.number]),
-            text: React.PropTypes.string,
+    static propTypes = {
+        typeMenuItems: PropTypes.arrayOf(PropTypes.shape({
+            id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+            text: PropTypes.string,
         })),
-        groupMenuItems: React.PropTypes.arrayOf(React.PropTypes.shape({
-            id: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.number]),
-            text: React.PropTypes.string,
+        groupMenuItems: PropTypes.arrayOf(PropTypes.shape({
+            id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+            text: PropTypes.string,
         })),
-        itemMenuItems: React.PropTypes.array,
-        searchItemMenuItems: React.PropTypes.array,
+        itemMenuItems: PropTypes.array,
+        searchItemMenuItems: PropTypes.array,
 
-        itemsFilter: React.PropTypes.string,
-        searchValue: React.PropTypes.string,
+        itemsFilter: PropTypes.string,
+        searchValue: PropTypes.string,
 
-        typeValue: React.PropTypes.string,
-        groupValue: React.PropTypes.string,
-        itemValue: React.PropTypes.string,
-        searchItemValue: React.PropTypes.string,
+        typeValue: PropTypes.string,
+        groupValue: PropTypes.string,
+        itemValue: PropTypes.string,
+        searchItemValue: PropTypes.string,
 
-        onTypeUpdate: React.PropTypes.func,
-        onGroupUpdate: React.PropTypes.func,
-        onItemUpdate: React.PropTypes.func,
-        onSearchItemUpdate: React.PropTypes.func,
-        onFilterListValues: React.PropTypes.func,
-        onSearch: React.PropTypes.func,
+        onTypeUpdate: PropTypes.func,
+        onGroupUpdate: PropTypes.func,
+        onItemUpdate: PropTypes.func,
+        onSearchItemUpdate: PropTypes.func,
+        onFilterListValues: PropTypes.func,
+        onSearch: PropTypes.func,
 
-        typeMenuLabel: React.PropTypes.oneOfType([
-            React.PropTypes.string,
-            React.PropTypes.shape({
-                empty: React.PropTypes.string,
-                filled: React.PropTypes.string,
+        typeMenuLabel: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.shape({
+                empty: PropTypes.string,
+                filled: PropTypes.string,
             }),
         ]),
-        groupMenuLabel: React.PropTypes.oneOfType([
-            React.PropTypes.string,
-            React.PropTypes.shape({
-                empty: React.PropTypes.string,
-                filled: React.PropTypes.string,
+        groupMenuLabel: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.shape({
+                empty: PropTypes.string,
+                filled: PropTypes.string,
             }),
         ]),
 
-        groupMenuIsVisible: React.PropTypes.bool,
-        itemMenuIsVisible: React.PropTypes.bool,
-        showSearch: React.PropTypes.bool,
-        appHeight: React.PropTypes.number,
-        menuIsExtended: React.PropTypes.bool,
-    },
+        groupMenuIsVisible: PropTypes.bool,
+        itemMenuIsVisible: PropTypes.bool,
+        showSearch: PropTypes.bool,
+        appHeight: PropTypes.number,
+        menuIsExtended: PropTypes.bool,
+    }
 
     getMenuItemsHeight() {
         const aboveContentsHeight = 390;
         return this.getListHeight(aboveContentsHeight);
-    },
+    }
 
     getSearchItemsHeight() {
         const aboveContentsHeight = 315;
         return this.getListHeight(aboveContentsHeight);
-    },
+    }
 
     getListHeight(aboveContentsHeight) {
         const minHeight = 280;
@@ -79,7 +80,7 @@ export default React.createClass({
         const calculatedMenuHeight = this.props.appHeight - aboveContentsHeight;
         const height = (calculatedMenuHeight > minHeight ? (calculatedMenuHeight > maxHeight ? maxHeight : calculatedMenuHeight) : minHeight);
         return height;
-    },
+    }
 
     isItemsEqual(prevItems, newItems, isMulitArray) {
         if (!isMulitArray) {
@@ -96,7 +97,7 @@ export default React.createClass({
             }
         }
         return true;
-    },
+    }
 
     render() {
         const elements = [];
@@ -165,7 +166,7 @@ export default React.createClass({
                 {elements}
             </div>
         );
-    },
+    }
 
 
-});
+}

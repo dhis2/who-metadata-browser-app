@@ -7,19 +7,23 @@ This software is distributed under the terms of the GNU General Public License v
 /* eslint-disable react/prefer-stateless-function */
 
 import React from 'react';
-import { Row, Grid, Col } from 'react-bootstrap';
+import PropTypes from 'prop-types';
+import { Row, Container, Col } from 'react-bootstrap';
 import isDefined from 'd2-utilizr/lib/isDefined';
 import BsGridCell from './BsGridCell.component';
 
-export default React.createClass({
-    propTypes: {
-        data: React.PropTypes.object.isRequired,
-    },
-    contextTypes: {
-        muiTheme: React.PropTypes.object,
-    },
+export default class extends React.Component {
+    static propTypes = {
+        data: PropTypes.object.isRequired,
+    }
+    static contextTypes = {
+        muiTheme: PropTypes.object,
+    }
+
+    displayName = 'SectionBsGrid'
+
     render() {
-        let header = '';
+        let header = null;
         if (isDefined(this.props.data.header)) {
             header = (<Row><Col sm={12} style={this.context.muiTheme.sectionHeader}>{this.props.data.header}</Col></Row>);
         }
@@ -29,6 +33,6 @@ export default React.createClass({
             return (<Row key={rowIndex} className="flex-row">{cols}</Row>);
         });
 
-        return (<Grid fluid>{header}{rows}</Grid>);
-    },
-});
+        return (<Container fluid>{header}{rows}</Container>);
+    }
+}

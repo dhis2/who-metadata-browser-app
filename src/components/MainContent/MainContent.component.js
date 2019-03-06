@@ -5,32 +5,19 @@ This software is distributed under the terms of the GNU General Public License v
 */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import Sections from '../Sections/Sections.component';
 import LoadingIndicatorPage from '../LoadingIndicators/LoadingIndicatorPage.component';
 import InitialMainContent from './InitialMainContent.component';
 
-const MainContent = React.createClass({
-    propTypes: {
-        style: React.PropTypes.object,
-        sectionsData: React.PropTypes.array,
-        header: React.PropTypes.string,
-        subHeader: React.PropTypes.string,
-        onSectionElementClick: React.PropTypes.func,
-        error: React.PropTypes.string,
-        waitingForContent: React.PropTypes.bool,
-        initialState: React.PropTypes.bool,
-        viewMode: React.PropTypes.number,
-    },
-    contextTypes: {
-        muiTheme: React.PropTypes.object,
-    },
-    getDefaultProps() {
-        return {
-            style: {},
-            sectionsData: [],
-            waitingForContent: false,
-        };
-    },
+class MainContent extends React.Component {
+
+    static defaultProps = {
+        style: {},
+        sectionsData: [],
+        waitingForContent: false,
+    }
+
     render() {
         let contents;
 
@@ -55,17 +42,28 @@ const MainContent = React.createClass({
         return (
             <div style={this.props.style}>
                 {contents}
-                {
-          (() => {
-              if (this.props.error) {
-                  return (<div>{this.props.error}</div>);
-              }
-              return null;
-          })()
-        }
+                {this.props.error &&
+                  <div>{this.props.error}</div>
+                }
             </div>
         );
-    },
-});
+    }
+}
+
+MainContent.propTypes = {
+    style: PropTypes.object,
+    sectionsData: PropTypes.array,
+    header: PropTypes.string,
+    subHeader: PropTypes.string,
+    onSectionElementClick: PropTypes.func,
+    error: PropTypes.string,
+    waitingForContent: PropTypes.bool,
+    initialState: PropTypes.bool,
+    viewMode: PropTypes.number,
+};
+
+MainContent.contextTypes = {
+    muiTheme: PropTypes.object,
+};
 
 export default MainContent;

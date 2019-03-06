@@ -7,6 +7,7 @@ This software is distributed under the terms of the GNU General Public License v
 /* eslint-disable no-nested-ternary */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import IconButton from 'material-ui/IconButton';
 import FontIcon from 'material-ui/FontIcon';
 import Drawer from 'material-ui/Drawer';
@@ -14,36 +15,35 @@ import Divider from 'material-ui/Divider';
 
 import isDefined from 'd2-utilizr/lib/isDefined';
 
-const MenuContainer = React.createClass({
-    propTypes: {
-        open: React.PropTypes.bool,
-        expanded: React.PropTypes.bool,
-        width: React.PropTypes.number,
-        expandedWidth: React.PropTypes.number,
-        onHide: React.PropTypes.func.isRequired,
-        onExpandedChange: React.PropTypes.func,
-        onHome: React.PropTypes.func,
-        openRight: React.PropTypes.bool,
-        docked: React.PropTypes.bool,
-        children: React.PropTypes.node,
-    },
+class MenuContainer extends React.Component {
 
-    contextTypes: {
-        muiTheme: React.PropTypes.object,
-    },
+    static propTypes = {
+        open: PropTypes.bool,
+        expanded: PropTypes.bool,
+        width: PropTypes.number,
+        expandedWidth: PropTypes.number,
+        onHide: PropTypes.func.isRequired,
+        onExpandedChange: PropTypes.func,
+        onHome: PropTypes.func,
+        openRight: PropTypes.bool,
+        docked: PropTypes.bool,
+        children: PropTypes.node,
+    }
+    
+    static contextTypes = {
+        muiTheme: PropTypes.object,
+    }
 
-    getDefaultProps() {
-        return {
-            open: true,
-            expanded: false,
-            width: 256,
-            openRight: false,
-            docked: true,
-            expandedWidth: 356,
-        };
-    },
+    static defaultProps = {
+        open: true,
+        expanded: false,
+        width: 256,
+        openRight: false,
+        docked: true,
+        expandedWidth: 356,
+    }
 
-    getHeader() {
+    getHeader = () => {
         const fontColor = ((this.context && this.context.muiTheme && this.context.muiTheme.fontIcon && this.context.muiTheme.fontIcon.color) || null);
 
         const homeButton = this.props.onHome ? (
@@ -81,19 +81,19 @@ const MenuContainer = React.createClass({
                 </div>
             </div>
         );
-    },
+    }
 
-    expand() {
+    expand = () => {
         this.props.onExpandedChange();
-    },
+    }
 
-    narrow() {
+    narrow = () =>  {
         if (this.props.expanded) {
             this.props.onExpandedChange();
         } else {
             this.props.onHide();
         }
-    },
+    }
 
     render() {
         const zIndexDefault = 1000;
@@ -138,7 +138,9 @@ const MenuContainer = React.createClass({
             </Drawer>
         );
         return renderData;
-    },
-});
+    }
+}
+
+
 
 export default MenuContainer;

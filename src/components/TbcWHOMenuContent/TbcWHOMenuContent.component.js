@@ -6,7 +6,8 @@ This software is distributed under the terms of the GNU General Public License v
 
 /* eslint-disable class-methods-use-this */
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 // materialUI
 import Paper from 'material-ui/Paper';
@@ -26,10 +27,6 @@ import DropDown from '../form_fields/DropDown.component';
 class TbcWHOMenuContent extends Component {
     constructor(props) {
         super(props);
-        this.handleCategorySelect = this.handleCategorySelect.bind(this);
-        this.handleReferenceSelect = this.handleReferenceSelect.bind(this);
-        this.closeReferenceDialog = this.closeReferenceDialog.bind(this);
-        this.showReferenceDialog = this.showReferenceDialog.bind(this);
 
         this.state = {
             refDialogOpen: false,
@@ -64,19 +61,19 @@ class TbcWHOMenuContent extends Component {
         );
     }
 
-    handleReferenceSelect(value) {
+    handleReferenceSelect = (value) => {
         userActions.setWHOReference({ categoryId: this.state.categoryId, referenceId: value });
     }
 
-    showReferenceDialog() {
+    showReferenceDialog = () => {
         this.setState({ refDialogOpen: true });
     }
 
-    closeReferenceDialog() {
+    closeReferenceDialog = () => {
         this.setState({ refDialogOpen: false });
     }
 
-    handleCategorySelect(value) {
+    handleCategorySelect = (value) => {
         userActions.setWHOCategory(value);
     }
 

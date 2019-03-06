@@ -5,13 +5,17 @@ This software is distributed under the terms of the GNU General Public License v
 */
 
 import React from 'react';
-import rx from 'rxjs/Rx';
+import PropTypes from 'prop-types';
+//import rx from 'rxjs/Rx';
 import log from 'loglevel';
 import { isDefined } from 'd2-utilizr';
 
 // material-ui
 import IconButton from 'material-ui/IconButton';
 import FontIcon from 'material-ui/FontIcon';
+
+//fonts
+import 'roboto-fontface';
 
 // d2-ui
 import HeaderBarComponent from 'd2-ui/lib/app-header/HeaderBar';
@@ -31,12 +35,14 @@ import menuSelectionStore from './stores/menuSelectionsStore';
 import selectedStore from './stores/selectedStore';
 import userActions from './actions/UserActions';
 import dispatcherActions from './actions/DispatcherActions';
+import { Subject } from 'rxjs'
 
 // utils
 import dataBuilders from './helpers/dataBuilders';
 
+import { MuiThemeProvider } from 'material-ui/styles';
+
 // theme
-import MuiThemeMixin from './styles/mui-theme.mixin';
 import AppTheme from './styles/theme';
 
 // constants
@@ -57,34 +63,35 @@ const mainContentTopPaddingPhone = 0;
 const phoneModeUpperThreshold = 768; // 768
 const tabletModeUpperThreshold = 1200; // 1200
 const modes = viewModes;
-export default React.createClass({
-    propTypes: {
-        d2: React.PropTypes.object,
-        WHOData: React.PropTypes.object,
-    },
 
-    childContextTypes: {
-        d2: React.PropTypes.object,
-    },
+class App extends React.Component {
 
-    mixins: [MuiThemeMixin],
+    static propTypes = {
+        d2: PropTypes.object,
+        WHOData: PropTypes.object,
+    }
 
-    getDefaultProps() {
-        return {
-            WHOData: {
-                categoriesMenu: [],
-                referencesMenu: {},
-            },
-        };
-    },
+    static defaultProps = {
+        WHOData: {
+            categoriesMenu: [],
+            referencesMenu: {},
+        },
+    }
 
-    getInitialState() {
+    static childContextTypes = {
+        d2: PropTypes.object,
+        muiTheme: PropTypes.object,
+    }
+
+    constructor(props) {
+        super(props)
+
         const width = this.getMyWidth();
         const viewMode = this.getViewMode(width);
         const leftMenuOpen = viewMode > modes.phone;
         const rightMenuOpen = viewMode === modes.desktop;
 
-        return {
+        this.state = {
             typeMenuValue: 'null',
             groupMenuValue: 'null',
             leftMenuOpen,
@@ -96,17 +103,21 @@ export default React.createClass({
             height: this.getMyHeight(),
             initialRun: true,
         };
-    },
+    }
+
+
+
 
     getChildContext() {
         return {
             d2: this.props.d2,
         };
-    },
+    }
+
+    subscriptions = [];
 
     componentDidMount() {
         // add subscribtions
-        this.subscriptions = [];
         this.subscriptions.push(this.getResizeStreamObserver());
         this.subscriptions.push(this.getMenuChangedObserver());
         this.subscriptions.push(this.getSelectionChangedObserver());
@@ -115,7 +126,7 @@ export default React.createClass({
 
         // listen to resizeEvent to be able to change pageDesign
         window.addEventListener('resize', this.onDimensionChange);
-    },
+    }
 
     componentWillUnmount() {
         this.subscriptions.forEach((sub) => {
@@ -123,14 +134,14 @@ export default React.createClass({
         });
 
         window.removeEventListener('resize', this.onDimensionChange);
-    },
+    }
 
-    onDimensionChange() {
+    onDimensionChange = () => {
         this.resizeStream.next(1);
-    },
+    }
 
-    getResizeStreamObserver() {
-        const resizeStream = this.resizeStream = new rx.Subject();
+    getResizeStreamObserver = () => {
+        const resizeStream = this.resizeStream = new Subject();
         return resizeStream.debounceTime(300)
         .subscribe(
             () => {
@@ -144,9 +155,9 @@ export default React.createClass({
                 log.debug('resizeStream completed');
             }
         );
-    },
+    }
 
-    getMenuChangedObserver() {
+    getMenuChangedObserver = () => {
         menuSelectionStore
         .subscribe(
             (selection) => {
@@ -159,9 +170,9 @@ export default React.createClass({
                 log.debug('menuStream completed');
             }
         );
-    },
+    }
 
-    getSelectionChangedObserver() {
+    getSelectionChangedObserver = () => {
         selectedStore.subscribe(
             ((selectedStoreData) => {
                 if (isDefined(selectedStoreData) && !isDefined(selectedStoreData.error)) {
@@ -251,9 +262,9 @@ export default React.createClass({
                 log.debug('selectedStore completed');
             }
         );
-    },
+    }
 
-    getWaitingForContentObserver() {
+    getWaitingForContentObserver = () => {
         dispatcherActions.waitingForMainContent.subscribe(
             (data) => {
                 if (data) {
@@ -267,9 +278,9 @@ export default React.createClass({
                 log.debug('waitingForContent completed');
             }
         );
-    },
+    }
 
-    getResetContentsObserver() {
+    getResetContentsObserver = () => {
         dispatcherActions.resetContents.subscribe(
             () => {
                 this.setState({ initialRun: true });
@@ -281,9 +292,9 @@ export default React.createClass({
                 log.debug('resetContens completed');
             }
         );
-    },
+    }
 
-    getViewMode(specifiedWidth) {
+    getViewMode = (specifiedWidth) => {
         let mode;
 
         const width = isDefined(specifiedWidth) ? specifiedWidth : this.state.width;
@@ -296,31 +307,31 @@ export default React.createClass({
             mode = modes.tablet;
         }
         return mode;
-    },
+    }
 
-    getMyHeight() {
+    getMyHeight = () => {
         return $(window).height();
-    },
+    }
 
-    getMyWidth() {
+    getMyWidth = () => {
         return $(window).width();
-    },
+    }
 
-    getGroupMenuItems(groupMenuVisible) {
+    getGroupMenuItems = (groupMenuVisible) => {
         if (groupMenuVisible) {
             return menuStore.state.groups[this.state.typeMenuValue];
         }
         return [];
-    },
+    }
 
-    getMenuItems(groupMenuVisible, itemMenuVisible) {
+    getMenuItems = (groupMenuVisible, itemMenuVisible) => {
         if (itemMenuVisible) {
             return (groupMenuVisible ? this.buildMenuItems() : menuStore.state.items[this.state.typeMenuValue]);
         }
         return [];
-    },
+    }
 
-    itemMenuIsVisible(groupMenuVisible) {
+    itemMenuIsVisible = (groupMenuVisible) => {
         if (this.state.typeMenuValue !== 'null' && this.state.typeMenuValue !== '_S') {
             if (groupMenuVisible) {
                 if (this.state.groupMenuValue !== 'null') {
@@ -331,9 +342,9 @@ export default React.createClass({
             }
         }
         return false;
-    },
+    }
 
-    buildMenuItems() {
+    buildMenuItems = () => {
         if (this.state.groupMenuValue !== 'ALLBYGROUPS') {
             return menuStore.state.items[this.state.typeMenuValue][this.state.groupMenuValue];
         }
@@ -345,9 +356,9 @@ export default React.createClass({
             }
         });
         return menuItems;
-    },
+    }
 
-    groupMenuIsVisible() {
+    groupMenuIsVisible = () => {
         if (this.state.typeMenuValue !== 'null') {
             const groups = menuStore.state.groups[this.state.typeMenuValue];
             if (isDefined(groups) && groups.length > 0) {
@@ -355,9 +366,9 @@ export default React.createClass({
             }
         }
         return false;
-    },
+    }
 
-    selectionChanged(selection) {
+    selectionChanged = (selection) => {
         const newState = {};
         newState.typeMenuValue = selection.type;
         newState.groupMenuValue = selection.group;
@@ -373,9 +384,9 @@ export default React.createClass({
         newState.searchItemMenuValue = selection.searchItem;
 
         this.setState(newState);
-    },
+    }
 
-    handleDimensionChange() {
+    handleDimensionChange = () => {
         const newWidth = this.getMyWidth();
         const newMode = this.getViewMode(newWidth);
         const oldMode = this.getViewMode(this.state.width);
@@ -405,22 +416,22 @@ export default React.createClass({
 
         this.setState(newStateData);
         log.debug(this.getMyWidth());
-    },
+    }
 
-    resetMainContent(error) {
+    resetMainContent = (error) => {
         const content = { sections: [] };
         if (error) {
             content.error = error;
         }
         return content;
-    },
+    }
 
-    showSearch(typeId) {
+    showSearch = (typeId) => {
         const type = menuStore.state.types.find(t => t.id === typeId);
         return isDefined(type) && isDefined(type.isSearch);
-    },
+    }
 
-    toggleLeftMenu() {
+    toggleLeftMenu = () => {
         const newStateData = {};
         if (!this.state.leftMenuOpen) {
             if (this.getViewMode() === modes.tablet) {
@@ -429,9 +440,9 @@ export default React.createClass({
         }
         newStateData.leftMenuOpen = !this.state.leftMenuOpen;
         this.setState(newStateData);
-    },
+    }
 
-    toggleRightMenu() {
+    toggleRightMenu = () => {
         const newStateData = {};
         if (!this.state.rightMenuOpen) {
             if (this.getViewMode() === modes.tablet) {
@@ -440,40 +451,40 @@ export default React.createClass({
         }
         newStateData.rightMenuOpen = !this.state.rightMenuOpen;
         this.setState(newStateData);
-    },
+    }
 
-    toggleLeftMenuExpanded() {
+    toggleLeftMenuExpanded = () => {
         this.setState({ leftMenuExpanded: !this.state.leftMenuExpanded });
-    },
-    toggleRightMenuExpanded() {
+    }
+    toggleRightMenuExpanded = () => {
         this.setState({ rightMenuExpanded: !this.state.rightMenuExpanded });
-    },
+    }
 
-    handleItemUpdate(value) {
+    handleItemUpdate = (value) => {
         if (this.getViewMode() === modes.phone) {
             this.setState({ leftMenuOpen: false });
         }
         userActions.setItem(value);
-    },
+    }
 
-    handleSearchItemUpdate(value) {
+    handleSearchItemUpdate = (value) => {
         if (this.getViewMode() === modes.phone) {
             this.setState({ leftMenuOpen: false });
         }
         userActions.setSearchItem(value);
-    },
+    }
 
-    handleSectionElementClick(elementData) {
+    handleSectionElementClick = (elementData) => {
         userActions.switchContent(elementData);
-    },
+    }
 
-    toggleMobileMenu(event, value) {
+    toggleMobileMenu = (event, value) => {
         if (value === 'M') {
             this.toggleLeftMenu();
         } else {
             this.toggleRightMenu();
         }
-    },
+    }
 
     render() {
         const groupMenuVisible = this.groupMenuIsVisible();
@@ -515,7 +526,7 @@ export default React.createClass({
             </div>
         ) : null);
 
-        const RightMenuShowButton = (viewMode !== modes.phone ?
+        const RightMenuShowButton = (false && /* disable for now */ viewMode !== modes.phone ?
         (
             <div style={{ position: 'fixed', overflow: 'hidden', top: 50, right: 0 }}>
                 <IconButton onClick={this.toggleRightMenu} >
@@ -533,79 +544,86 @@ export default React.createClass({
 
 
         return (
-            <div>
-                <HeaderBar />
-                {mobileMenu}
+            <MuiThemeProvider muiTheme={AppTheme}>
+                <div>
+                    <HeaderBar />
+                    {mobileMenu}
 
-                <div className="content-body">
-                    <MenuContainer
-                        open={this.state.leftMenuOpen}
-                        expanded={this.state.leftMenuExpanded}
-                        width={LeftMenuWidthOnOpen}
-                        expandedWidth={LeftMenuWidthExpanded}
-                        onHide={this.toggleLeftMenu}
-                        onExpandedChange={this.toggleLeftMenuExpanded}
-                        onHome={userActions.reset}
-                        docked={viewMode !== modes.phone}
-                    >
+                    <div className="content-body">
+                        <MenuContainer
+                            open={this.state.leftMenuOpen}
+                            expanded={this.state.leftMenuExpanded}
+                            width={LeftMenuWidthOnOpen}
+                            expandedWidth={LeftMenuWidthExpanded}
+                            onHide={this.toggleLeftMenu}
+                            onExpandedChange={this.toggleLeftMenuExpanded}
+                            onHome={userActions.reset}
+                            docked={viewMode !== modes.phone}
+                        >
 
-                        <TbcMenuContent
-                            typeMenuItems={menuStore.state.types}
-                            groupMenuItems={groupMenuItems}
-                            itemMenuItems={menuItems}
-                            searchItemMenuItems={menuStore.state.searchData}
-                            itemsFilter={this.state.itemsFilter}
-                            typeValue={this.state.typeMenuValue}
-                            groupValue={this.state.groupMenuValue}
-                            itemValue={this.state.itemMenuValue}
-                            searchItemValue={this.state.searchItemMenuValue}
-                            onTypeUpdate={userActions.setType}
-                            onGroupUpdate={userActions.setGroup}
-                            onItemUpdate={this.handleItemUpdate}
-                            onSearchItemUpdate={this.handleSearchItemUpdate}
-                            typeMenuLabel={{ empty: 'Browse By Type', filled: 'Type' }}
-                            groupMenuLabel={{ empty: 'Select Group', filled: 'Group' }}
-                            onFilterListValues={userActions.filterItems}
-                            searchValue={this.state.searchValue}
-                            onSearch={userActions.search}
-                            showSearch={this.showSearch(this.state.typeMenuValue)}
-                            groupMenuIsVisible={groupMenuVisible}
-                            itemMenuIsVisible={itemsMenuVisible}
-                            appHeight={this.state.height}
-                            menuIsExtended={this.state.leftMenuOpen && this.state.leftMenuExpanded}
+                            <TbcMenuContent
+                                typeMenuItems={menuStore.state.types}
+                                groupMenuItems={groupMenuItems}
+                                itemMenuItems={menuItems}
+                                searchItemMenuItems={menuStore.state.searchData}
+                                itemsFilter={this.state.itemsFilter}
+                                typeValue={this.state.typeMenuValue}
+                                groupValue={this.state.groupMenuValue}
+                                itemValue={this.state.itemMenuValue}
+                                searchItemValue={this.state.searchItemMenuValue}
+                                onTypeUpdate={userActions.setType}
+                                onGroupUpdate={userActions.setGroup}
+                                onItemUpdate={this.handleItemUpdate}
+                                onSearchItemUpdate={this.handleSearchItemUpdate}
+                                typeMenuLabel={{ empty: 'Browse By Type', filled: 'Type' }}
+                                groupMenuLabel={{ empty: 'Select Group', filled: 'Group' }}
+                                onFilterListValues={userActions.filterItems}
+                                searchValue={this.state.searchValue}
+                                onSearch={userActions.search}
+                                showSearch={this.showSearch(this.state.typeMenuValue)}
+                                groupMenuIsVisible={groupMenuVisible}
+                                itemMenuIsVisible={itemsMenuVisible}
+                                appHeight={this.state.height}
+                                menuIsExtended={this.state.leftMenuOpen && this.state.leftMenuExpanded}
+                            />
+
+                        </MenuContainer>
+
+                        {LeftMenuShowButton}
+
+                        <MainContent
+                            style={mainContentStyle}
+                            sectionsData={this.state.mainContent.sections}
+                            header={this.state.mainContent.header}
+                            subHeader={this.state.mainContent.subHeader}
+                            onSectionElementClick={this.handleSectionElementClick}
+                            error={this.state.mainContent.error}
+                            initialState={this.state.initialRun}
+                            viewMode={viewMode}
+                            waitingForContent={this.state.waitingForContent}
                         />
 
-                    </MenuContainer>
+                        { false && // disabled for now
+                            <MenuContainer open={this.state.rightMenuOpen} expanded={this.state.rightMenuExpanded} width={RigthMenuWidthOnOpen} expandedWidth={RightMenuWidthExpanded} onHide={this.toggleRightMenu} onExpandedChange={this.toggleRightMenuExpanded} openRight={viewMode !== modes.phone} docked={viewMode !== modes.phone} showHomeButton={false}>
+                                <TbcWHOMenuContent
+                                    categoriesMenu={this.props.WHOData.categoriesMenu}
+                                    referencesMenu={this.props.WHOData.referencesMenu}
+                                    references={this.props.WHOData.references}
+                                    aboutWHOreferences={this.props.WHOData.aboutWHOreferences}
+                                    isMobileView={viewMode === modes.phone}
+                                    menuIsExtended={this.state.rightMenuOpen && this.state.rightMenuExpanded}
+                                    appHeight={this.state.height}
+                                />
+                            </MenuContainer>
+                        }
 
-                    {LeftMenuShowButton}
-
-                    <MainContent
-                        style={mainContentStyle}
-                        sectionsData={this.state.mainContent.sections}
-                        header={this.state.mainContent.header}
-                        subHeader={this.state.mainContent.subHeader}
-                        onSectionElementClick={this.handleSectionElementClick}
-                        error={this.state.mainContent.error}
-                        initialState={this.state.initialRun}
-                        viewMode={viewMode}
-                        waitingForContent={this.state.waitingForContent}
-                    />
-
-                    <MenuContainer open={this.state.rightMenuOpen} expanded={this.state.rightMenuExpanded} width={RigthMenuWidthOnOpen} expandedWidth={RightMenuWidthExpanded} onHide={this.toggleRightMenu} onExpandedChange={this.toggleRightMenuExpanded} openRight={viewMode !== modes.phone} docked={viewMode !== modes.phone} showHomeButton={false}>
-                        <TbcWHOMenuContent
-                            categoriesMenu={this.props.WHOData.categoriesMenu}
-                            referencesMenu={this.props.WHOData.referencesMenu}
-                            references={this.props.WHOData.references}
-                            aboutWHOreferences={this.props.WHOData.aboutWHOreferences}
-                            isMobileView={viewMode === modes.phone}
-                            menuIsExtended={this.state.rightMenuOpen && this.state.rightMenuExpanded}
-                            appHeight={this.state.height}
-                        />
-                    </MenuContainer>
-
-                    {RightMenuShowButton}
+                        {RightMenuShowButton}
+                    </div>
                 </div>
-            </div>
+            </MuiThemeProvider>
         );
-    },
-});
+    }
+}
+
+
+export default App;

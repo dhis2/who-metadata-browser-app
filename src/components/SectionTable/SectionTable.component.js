@@ -8,23 +8,26 @@ This software is distributed under the terms of the GNU General Public License v
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Table, TableBody, TableRow, TableRowColumn } from 'material-ui/Table';
 
 import sectionTableConstants from './SectionTable.constants';
 import LoadingIndicator from '../LoadingIndicators/LoadingIndicator.component';
 
 
-export default React.createClass({
+export default class extends React.Component {
+    
+    static propTypes = {
+        data: PropTypes.object.isRequired,
+        onCellClick: PropTypes.func,
+    }
+    static contextTypes = {
+        muiTheme: PropTypes.object,
+    }
 
-    propTypes: {
-        data: React.PropTypes.object.isRequired,
-        onCellClick: React.PropTypes.func,
-    },
-    contextTypes: {
-        muiTheme: React.PropTypes.object,
-    },
+    displayName = 'SectionTable'
 
-    getTableHeader(muiTheme) {
+    getTableHeader = (muiTheme) => {
         const headerColumns = this.props.data.header.map((h, index) => {
             const style = Object.assign({}, muiTheme.tableHeaderColumn);
             const width = this.props.data.colWidth && this.props.data.colWidth[index];
@@ -40,26 +43,23 @@ export default React.createClass({
         });
 
         return (<TableRow key="header" style={muiTheme.tableHeaderRow}>{headerColumns}</TableRow>);
-    },
+    }
 
-    getTableRows(muiTheme) {
+    getTableRows = (muiTheme) => {
         let tableRows = [];
         if (!this.props.data.waitingForContent === true) {
             tableRows = this.props.data.body.map((r, rowIndex) => {
                 const rowCols = r.map((c, colIndex) => {
                     const { value, onClickData, ...config } = c;
+
+                    const contentsOrLoading = value === sectionTableConstants.waiting 
+                                                ? <LoadingIndicator size={20} />
+                                                : this.getCellContents(value, onClickData);
+                    
+
                     return (
                         <TableRowColumn key={colIndex} {...config} style={muiTheme.tableCell}>
-                            {
-                                (() => {
-                                    if (value === sectionTableConstants.waiting) {
-                                        return (
-                                            <LoadingIndicator size={20} />
-                                        );
-                                    }
-                                    return this.getCellContents(value, onClickData);
-                                })()
-                            }
+                            { contentsOrLoading }
                         </TableRowColumn>
                     );
                 });
@@ -72,36 +72,31 @@ export default React.createClass({
             });
         }
         return tableRows;
-    },
+    }
 
-    getCellContents(value, onClickData) {
+    getCellContents = (value, onClickData) => {
         return (onClickData ? <div><label className="clickable-item" style={{ cursor: 'pointer' }} onClick={() => this.handleCellClick(onClickData)}>{value}</label></div> : <div>{value}</div>);
-    },
+    }
 
-    handleCellClick(onClickData) {
+    handleCellClick = (onClickData) => {
         this.props.onCellClick(onClickData);
-    },
+    }
 
     render() {
         const muiTheme = (this.context && this.context.muiTheme) || {};
 
+        const loading = (this.props.data.waitingForContent === true) ? (<LoadingIndicator size={100} center top={5} />) : null;
+        
         return (
             <div>
                 <Table selectable={false} style={muiTheme.table} bodyStyle={muiTheme.tableDiv}>
-                    <TableBody adjustForCheckbox={false} displayRowCheckbox={false}>
+                    <TableBody displayRowCheckbox={false}>
                         {this.getTableHeader(muiTheme)}
                         {this.getTableRows(muiTheme)}
                     </TableBody>
                 </Table>
-                {
-                    (() => {
-                        if (this.props.data.waitingForContent === true) {
-                            return (<LoadingIndicator size={100} center top={5} />);
-                        }
-                        return null;
-                    })()
-                }
+                {loading}
             </div>
         );
-    },
-});
+    }
+}

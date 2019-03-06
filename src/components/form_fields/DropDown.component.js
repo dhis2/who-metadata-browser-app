@@ -8,56 +8,57 @@ This software is distributed under the terms of the GNU General Public License v
 /* eslint-disable no-nested-ternary*/
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import { isString } from 'd2-utilizr';
 
-export default React.createClass({
-    propTypes: {
-        value: React.PropTypes.oneOfType([
-            React.PropTypes.string,
-            React.PropTypes.number,
+class DropDown extends React.Component {
+
+    static propTypes = {
+        value: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
         ]),
-        onChange: React.PropTypes.func,
-        menuItems: React.PropTypes.arrayOf(React.PropTypes.shape({
-            id: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.number]),
-            text: React.PropTypes.string,
+        onChange: PropTypes.func,
+        menuItems: PropTypes.arrayOf(PropTypes.shape({
+            id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+            text: PropTypes.string,
         })),
-        includeEmpty: React.PropTypes.bool,
-        emptyLabel: React.PropTypes.string,
-        noOptionsLabel: React.PropTypes.string,
-        label: React.PropTypes.oneOfType([
-            React.PropTypes.string,
-            React.PropTypes.shape({
-                empty: React.PropTypes.string,
-                filled: React.PropTypes.string,
-                noContent: React.PropTypes.string,
+        includeEmpty: PropTypes.bool,
+        emptyLabel: PropTypes.string,
+        noOptionsLabel: PropTypes.string,
+        label: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.shape({
+                empty: PropTypes.string,
+                filled: PropTypes.string,
+                noContent: PropTypes.string,
             }),
         ]).isRequired,
-        fullWidth: React.PropTypes.bool,
-        width: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.number]),
-    },
+        fullWidth: PropTypes.bool,
+        width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    }
+    
 
-    getDefaultProps() {
-        return {
-            includeEmpty: false,
-            emptyLabel: 'Not specified',
-        };
-    },
+    static defaultProps = {
+        includeEmpty: false,
+        emptyLabel: 'Not specified',
+    }
 
-    handleChange(event, index, value) {
+    handleChange = (event, index, value) => {
         if (this.props.value !== value) {
             this.props.onChange(value);
         }
-    },
+    }
 
-    renderMenuItems(menuItems) {
+    renderMenuItems = (menuItems) => {
         if (this.props.includeEmpty) {
             menuItems.unshift({ id: 'null', displayName: this.props.emptyLabel });
         }
 
         return menuItems.map(item => (<MenuItem key={item.id} value={item.id} primaryText={item.text} />));
-    },
+    }
 
     render() {
         const { onChange, value, menuItems, label, includeEmpty, emptyLabel, noOptionsLabel, ...other } = this.props;
@@ -83,5 +84,8 @@ export default React.createClass({
                 }
             </SelectField>
         );
-    },
-});
+    }
+}
+
+
+export default DropDown
