@@ -8,7 +8,7 @@ This software is distributed under the terms of the GNU General Public License v
 /* eslint-disable prefer-const */
 
 import React from 'react';
-import PropTypes from 'proptypes';
+import PropTypes from 'prop-types';
 import { Col } from 'react-bootstrap';
 import isDefined from 'd2-utilizr/lib/isDefined';
 

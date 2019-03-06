@@ -7,7 +7,7 @@ This software is distributed under the terms of the GNU General Public License v
 /* eslint-disable react/prefer-stateless-function */
 
 import React from 'react';
-import PropTypes from 'proptypes';
+import PropTypes from 'prop-types';
 import Paper from 'material-ui/Paper';
 
 export default class extends React.Component {

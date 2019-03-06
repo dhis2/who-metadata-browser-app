@@ -7,7 +7,7 @@ This software is distributed under the terms of the GNU General Public License v
 /* eslint-disable react/prefer-stateless-function */
 
 import React, { Component } from 'react';
-import PropTypes from 'proptypes';
+import PropTypes from 'prop-types';
 
 // components
 import CircularProgress from 'material-ui/CircularProgress';

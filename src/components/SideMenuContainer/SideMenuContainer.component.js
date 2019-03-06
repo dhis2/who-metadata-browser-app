@@ -7,7 +7,7 @@ This software is distributed under the terms of the GNU General Public License v
 /* eslint-disable no-nested-ternary */
 
 import React from 'react';
-import PropTypes from 'proptypes';
+import PropTypes from 'prop-types';
 import IconButton from 'material-ui/IconButton';
 import FontIcon from 'material-ui/FontIcon';
 import Drawer from 'material-ui/Drawer';

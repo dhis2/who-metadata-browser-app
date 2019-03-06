@@ -5,7 +5,7 @@ This software is distributed under the terms of the GNU General Public License v
 */
 
 import React from 'react';
-import PropTypes from 'proptypes';
+import PropTypes from 'prop-types';
 import RefreshIndicator from 'material-ui/RefreshIndicator';
 
 const Loader = (props) => {

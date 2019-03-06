@@ -8,7 +8,7 @@ This software is distributed under the terms of the GNU General Public License v
 /* eslint-disable class-methods-use-this */
 
 import React, { Component } from 'react';
-import PropTypes from 'proptypes';
+import PropTypes from 'prop-types';
 import { isArray } from 'd2-utilizr';
 import TextField from 'material-ui/TextField';
 

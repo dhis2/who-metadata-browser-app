@@ -9,7 +9,7 @@ This software is distributed under the terms of the GNU General Public License v
 /* eslint-disable new-cap */
 
 import React, { Component } from 'react';
-import PropTypes from 'proptypes';
+import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom';
 import log from 'loglevel';
 import { isDefined, isArray } from 'd2-utilizr';

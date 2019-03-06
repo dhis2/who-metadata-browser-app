@@ -45,14 +45,7 @@ webpackConfig.devServer = {
     contentBase: './src',
     progress: true,
     port: 8081,
-    open: true,
-    proxy: {
-        '/dhis-web-commons/**': {
-            target: dhisConfig.baseUrl,
-            bypass: log,
-            changeOrigin: true
-        }
-    }
+    open: true
 };
 
 module.exports = webpackConfig;

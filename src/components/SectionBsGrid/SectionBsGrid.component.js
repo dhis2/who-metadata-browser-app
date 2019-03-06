@@ -7,7 +7,7 @@ This software is distributed under the terms of the GNU General Public License v
 /* eslint-disable react/prefer-stateless-function */
 
 import React from 'react';
-import PropTypes from 'proptypes';
+import PropTypes from 'prop-types';
 import { Row, Container, Col } from 'react-bootstrap';
 import isDefined from 'd2-utilizr/lib/isDefined';
 import BsGridCell from './BsGridCell.component';

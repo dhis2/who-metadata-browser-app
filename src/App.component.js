@@ -5,7 +5,7 @@ This software is distributed under the terms of the GNU General Public License v
 */
 
 import React from 'react';
-import PropTypes from 'proptypes';
+import PropTypes from 'prop-types';
 //import rx from 'rxjs/Rx';
 import log from 'loglevel';
 import { isDefined } from 'd2-utilizr';
@@ -13,6 +13,10 @@ import { isDefined } from 'd2-utilizr';
 // material-ui
 import IconButton from 'material-ui/IconButton';
 import FontIcon from 'material-ui/FontIcon';
+
+//fonts
+import 'material-ui-icons';
+import 'roboto-fontface';
 
 // d2-ui
 import HeaderBarComponent from 'd2-ui/lib/app-header/HeaderBar';
@@ -40,7 +44,6 @@ import dataBuilders from './helpers/dataBuilders';
 import { MuiThemeProvider } from 'material-ui/styles';
 
 // theme
-//import MuiThemeMixin from './styles/mui-theme.mixin';
 import AppTheme from './styles/theme';
 
 // constants

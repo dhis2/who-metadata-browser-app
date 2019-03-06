@@ -7,7 +7,7 @@ This software is distributed under the terms of the GNU General Public License v
 /* eslint-disable no-nested-ternary */
 
 import React from 'react';
-import PropTypes from 'proptypes';
+import PropTypes from 'prop-types';
 import DropDown from '../form_fields/DropDown.component';
 import DynamicList from '../Lists/DynamicLoadingList.component';
 import SearchableList from '../Lists/SearchableList.component';
