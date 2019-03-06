@@ -15,7 +15,6 @@ import IconButton from 'material-ui/IconButton';
 import FontIcon from 'material-ui/FontIcon';
 
 //fonts
-import 'material-ui-icons';
 import 'roboto-fontface';
 
 // d2-ui
