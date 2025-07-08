@@ -18,6 +18,8 @@ import { isDefined } from 'd2-utilizr';
 import { init, config, getUserSettings, getManifest } from 'd2/lib/d2';
 import addD2Extensions from './d2/d2Extensions';
 
+import './helpers/detectGlobalShell';
+
 // project components
 import LoadingIndicatorApp from './components/LoadingIndicators/LoadingIndicatorApp.component';
 import App from './App.component';
