@@ -12,19 +12,6 @@ html {
     margin-top: 3rem;
 }
 
-// Hide header bar and adjust layout when in global shell
-body.embedded {
-    margin-top: -48px !important;
-}
-
-body.embedded #app > div > div:nth-child(1) {
-    display: none !important;
-}
-
-body.embedded #app > div > div.content-body > div:nth-child(1) > div > div {
-    padding-top: 0 !important;
-}
-
 @media only screen and (min-width : 768px) {
     .flex-row {
         display: flex;
