@@ -39,6 +39,7 @@ import { Subject } from 'rxjs'
 
 // utils
 import dataBuilders from './helpers/dataBuilders';
+import { loadLegacyHeaderBarIfNeeded } from './helpers/headerVersionHelper';
 
 import { MuiThemeProvider } from 'material-ui/styles';
 
@@ -102,6 +103,7 @@ class App extends React.Component {
             width,
             height: this.getMyHeight(),
             initialRun: true,
+            showHeaderBar: false,
         };
     }
 
@@ -116,7 +118,7 @@ class App extends React.Component {
 
     subscriptions = [];
 
-    componentDidMount() {
+    async componentDidMount() {
         // add subscribtions
         this.subscriptions.push(this.getResizeStreamObserver());
         this.subscriptions.push(this.getMenuChangedObserver());
@@ -126,6 +128,12 @@ class App extends React.Component {
 
         // listen to resizeEvent to be able to change pageDesign
         window.addEventListener('resize', this.onDimensionChange);
+        try {
+            const shouldShow = await loadLegacyHeaderBarIfNeeded(this.props.d2);
+            this.setState({ showHeaderBar: shouldShow });
+        } catch (error) {
+            console.error('Error determining header bar visibility:', error);
+        }
     }
 
     componentWillUnmount() {
@@ -546,7 +554,7 @@ class App extends React.Component {
         return (
             <MuiThemeProvider muiTheme={AppTheme}>
                 <div>
-                    <HeaderBar />
+                    {this.state.showHeaderBar && <HeaderBar />}
                     {mobileMenu}
 
                     <div className="content-body">
