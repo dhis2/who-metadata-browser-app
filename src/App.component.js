@@ -39,6 +39,7 @@ import { Subject } from 'rxjs'
 
 // utils
 import dataBuilders from './helpers/dataBuilders';
+import { shouldRenderHeaderBar } from './helpers/shouldRenderHeaderBar';
 
 import { MuiThemeProvider } from 'material-ui/styles';
 
@@ -248,7 +249,14 @@ class App extends React.Component {
                                 log.debug('Tried to update section but didnt find the section in the container');
                                 currentSections.push(sectionDataContainer);
                             }
-                            this.setState({ mainContent: { header: this.state.mainContent.header, subHeader: this.state.mainContent.subHeader, sections: currentSections }, waitingForContent: false });
+                            this.setState((prevState) => ({
+                                mainContent: {
+                                    header: prevState.mainContent.header,
+                                    subHeader: prevState.mainContent.subHeader,
+                                    sections: currentSections
+                                },
+                                waitingForContent: false
+                            }));
                         }
                     }
                 } else {
@@ -268,7 +276,10 @@ class App extends React.Component {
         dispatcherActions.waitingForMainContent.subscribe(
             (data) => {
                 if (data) {
-                    this.setState(Object.assign({ waitingForContent: true }, (this.state.initialRun ? { initialRun: false } : {})));
+                    this.setState(prevState => ({
+                        waitingForContent: true,
+                        ...(prevState.initialRun ? { initialRun: false } : {})
+                    }));
                 }
             },
             (error) => {
@@ -454,10 +465,10 @@ class App extends React.Component {
     }
 
     toggleLeftMenuExpanded = () => {
-        this.setState({ leftMenuExpanded: !this.state.leftMenuExpanded });
+        this.setState(prevState => ({ leftMenuExpanded: !prevState.leftMenuExpanded }));
     }
     toggleRightMenuExpanded = () => {
-        this.setState({ rightMenuExpanded: !this.state.rightMenuExpanded });
+        this.setState(prevState => ({ rightMenuExpanded: !prevState.rightMenuExpanded }));
     }
 
     handleItemUpdate = (value) => {
@@ -546,7 +557,7 @@ class App extends React.Component {
         return (
             <MuiThemeProvider muiTheme={AppTheme}>
                 <div>
-                    <HeaderBar />
+                    {shouldRenderHeaderBar && <HeaderBar />}
                     {mobileMenu}
 
                     <div className="content-body">
